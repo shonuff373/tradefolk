@@ -1121,7 +1121,7 @@ export default function App() {
     <div className="tf-app" style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: theme.bg, minHeight: "100vh", color: theme.text }}>
       <style>{buildThemeCSS(theme)}</style>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
         .bp{background:#1A1A1A;color:#F0EEE9;border:none;border-radius:100px;padding:13px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;width:100%}
         .bp:hover{background:#3D5040;transform:translateY(-1px)} .bp:active{transform:scale(.97)!important} .bp:disabled{opacity:.4;cursor:default;transform:none}
@@ -1148,7 +1148,7 @@ export default function App() {
         .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px} @media(min-width:600px){.cat-grid{grid-template-columns:repeat(5,1fr)}}
         .cat-tile{border-radius:13px;padding:13px 8px;text-align:center;cursor:pointer;transition:all .2s;border:2px solid transparent;background:#fff}
         .cat-tile.sel{border-color:#1A1A1A}
-        .stitle{font-family:'Instrument Serif',serif;color:#1A1A1A;letter-spacing:-0.01em}
+        .stitle{font-family:'Space Grotesk',sans-serif;color:#1A1A1A;letter-spacing:-0.01em}
         .tbtn{flex:1;padding:10px;border-radius:11px;border:1.5px solid #DDD8CE;background:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .15s;color:#555;text-align:center}
         .tbtn.on{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
         .warn{background:#FFF8F0;border:1.5px solid #F0B429;border-radius:13px;padding:11px 13px;margin-bottom:14px;display:flex;gap:9px;align-items:flex-start}
@@ -1361,9 +1361,8 @@ export default function App() {
       {/* HEADER */}
       <div style={{ padding: "18px 22px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          {/* Desktop header logo — arrows + wordmark */}
           <svg width="28" height="18" viewBox="0 0 96 56"><line x1="10" y1="14" x2="63" y2="14" stroke="#1A1A1A" strokeWidth="10" strokeLinecap="round"/><polygon points="86,14 61,2 61,26" fill="#1A1A1A"/><line x1="86" y1="42" x2="33" y2="42" stroke="#E85D3A" strokeWidth="10" strokeLinecap="round"/><polygon points="10,42 35,30 35,54" fill="#E85D3A"/></svg>
-          <span style={{ fontFamily: "Georgia,serif", fontSize: 20, fontWeight: 800, letterSpacing: "-0.5px", color: "#1A1A1A" }}>Bartr</span>
+          <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, fontWeight: 700, letterSpacing: "-0.5px", color: "#1A1A1A" }}>Bartr</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           {/* Search */}
@@ -1493,7 +1492,7 @@ export default function App() {
               <div style={{ background: "linear-gradient(135deg, #F0F7F2, #E8F5E9)", border: "1.5px solid #C8E6C9", borderRadius: 18, padding: "16px 18px", marginBottom: 18, display: "flex", gap: 13, alignItems: "center" }}>
                 <span style={{ fontSize: 28 }}>🎯</span>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3 }}>Tell us what you need</div>
+                  <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3 }}>Tell us what you need</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#555)", lineHeight: 1.6 }}>Add a "looking for" to your profile and we'll surface matching listings right here.</div>
                 </div>
                 <button onClick={() => setEditingProfile(true)} style={{ background: "#1A1A1A", border: "none", borderRadius: 100, padding: "8px 14px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", flexShrink: 0 }}>Update</button>
@@ -2513,11 +2512,11 @@ export default function App() {
                     {/* Stats */}
                     <div style={{ display: "flex", gap: 9 }}>
                       <div style={{ flex: 1, background: "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 12, padding: "11px 10px", textAlign: "center" }}>
-                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "var(--tf-text,#1A1A1A)" }}>{referrals.length}</div>
+                        <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "var(--tf-text,#1A1A1A)" }}>{referrals.length}</div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>Friends joined</div>
                       </div>
                       <div style={{ flex: 1, background: "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 12, padding: "11px 10px", textAlign: "center" }}>
-                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#E85D3A" }}>+{referrals.length}</div>
+                        <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "#E85D3A" }}>+{referrals.length}</div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>Bonus listing slots</div>
                       </div>
                     </div>
@@ -2860,7 +2859,7 @@ export default function App() {
           {/* Header */}
           <div className="profile-edit-header" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 20px 14px", background: theme.card, borderBottom: "1px solid " + theme.border, position: "sticky", top: 0, zIndex: 10 }}>
             <button onClick={() => setEditingProfile(false)} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 14, color: theme.muted, cursor: "pointer", padding: 0 }}>Cancel</button>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: theme.primary }}>Edit Profile</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 17, letterSpacing: "-0.01em", color: theme.primary }}>Edit Profile</div>
             <button onClick={() => { setEditingProfile(false); showToast("Profile updated! ✏️"); }} style={{ background: theme.primary, border: "none", borderRadius: 100, padding: "7px 16px", fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: theme.bg, cursor: "pointer" }}>Save</button>
           </div>
 
@@ -2997,7 +2996,7 @@ export default function App() {
             {completedList.length === 0 ? (
               <div style={{ textAlign: "center", padding: "60px 20px" }}>
                 <div style={{ fontSize: 48, marginBottom: 14 }}>🤝</div>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>No trades yet</div>
+                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>No trades yet</div>
                 <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-muted,#999)", lineHeight: 1.6, maxWidth: 260, margin: "0 auto 24px" }}>
                   Completed and ended trades will appear here as a record of your exchange history.
                 </p>
@@ -3051,7 +3050,7 @@ export default function App() {
                           </div>
 
                           {/* Listing title */}
-                          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3, lineHeight: 1.3 }}>
+                          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3, lineHeight: 1.3 }}>
                             {conv.listing.title}
                           </div>
 
@@ -3149,7 +3148,7 @@ export default function App() {
               {/* Receipt header */}
               <div style={{ textAlign: "center", marginBottom: 20 }}>
                 <div style={{ fontSize: 44, marginBottom: 8 }}>{isComplete ? "🎉" : "🔚"}</div>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, letterSpacing: "-0.01em", color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>
+                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, letterSpacing: "-0.01em", color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>
                   Trade {isComplete ? "Complete" : "Ended"}
                 </div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#aaa)" }}>{completedDate}</div>
@@ -3264,7 +3263,7 @@ export default function App() {
                     🔗
                   </button>
                   <div style={{ position: "absolute", bottom: 14, left: 16, right: 60 }}>
-                    <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 19, color: "#fff", lineHeight: 1.2 }}>{selectedListing.title}</div>
+                    <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 19, color: "#fff", lineHeight: 1.2 }}>{selectedListing.title}</div>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 3 }}>
                       <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "rgba(255,255,255,.8)" }}>{selectedListing.businessName || selectedListing.name}</div>
                       {!selectedListing.mine && (
@@ -3365,7 +3364,7 @@ export default function App() {
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.45)" }} onClick={() => setBoostTarget(null)} />
           <div style={{ position: "relative", background: "var(--tf-bg,#F0EEE9)", borderRadius: "24px 24px 0 0", padding: "24px 22px 36px", zIndex: 1 }}>
             <div style={{ width: 36, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 20px" }} />
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>⚡ Boost listing</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>⚡ Boost listing</div>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-muted,#999)", marginBottom: 20, lineHeight: 1.5 }}>
               Boosted listings appear at the top of Browse results for everyone in your area.
             </div>
@@ -3393,7 +3392,7 @@ export default function App() {
               {[[7, "7 days"], [14, "14 days"]].map(([days, label]) => (
                 <button key={days} onClick={() => boostListing(boostTarget, days, !isPro)}
                   style={{ flex: 1, padding: "14px 8px", background: "var(--tf-card,#fff)", border: "2px solid #F59E0B", borderRadius: 14, cursor: "pointer", textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#D97706" }}>⚡</div>
+                  <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "#D97706" }}>⚡</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 700, color: "var(--tf-text,#1A1A1A)", marginTop: 4 }}>{label}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#999)", marginTop: 2 }}>{isPro ? "Free" : "1 credit"}</div>
                 </button>
@@ -3754,7 +3753,7 @@ Be friendly and concise. Never suggest illegal or sexual services.`,
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
         <button onClick={onCancel} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20, color: "var(--tf-muted,#888)" }}>←</button>
         <div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 16, color: "var(--tf-text,#1A1A1A)" }}>Describe Your Request</div>
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 16, color: "var(--tf-text,#1A1A1A)" }}>Describe Your Request</div>
           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)" }}>for {listing.title} · {listing.name}</div>
         </div>
       </div>
@@ -4151,7 +4150,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
             <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
             <div style={{ textAlign: "center", marginBottom: 16 }}>
               <div style={{ fontSize: 36, marginBottom: 8 }}>🔴</div>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>End this agreement?</div>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>End this agreement?</div>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-sub,#666)", lineHeight: 1.6 }}>
                 {isOngoing
                   ? "Both parties will have 30 days to fulfil any outstanding obligations. This cannot be undone."
@@ -4402,7 +4401,7 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 1 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What went wrong?</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What went wrong?</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>Select the category that best describes the issue with <strong style={{ color: "#1A1A1A" }}>{conv.listing.name}</strong>.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {DISPUTE_CATEGORIES.map(cat => (
@@ -4423,7 +4422,7 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 2 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>Describe what happened</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>Describe what happened</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>Be specific. This helps both parties and any mediator understand the situation clearly.</p>
             <textarea className="inp" style={{ minHeight: 120 }}
               placeholder="e.g. We agreed on 3 hours of garden work on Saturday. They arrived 2 hours late and only completed half the agreed tasks before leaving..."
@@ -4440,7 +4439,7 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 3 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What outcome do you want?</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What outcome do you want?</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>This helps guide the resolution. You can always change course through the chat.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {DISPUTE_OUTCOMES.map(opt => (
@@ -4473,7 +4472,7 @@ function MediationConfirmSheet({ caseRef, conv, onClose }) {
         <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
         <div style={{ textAlign: "center", marginBottom: 20 }}>
           <div style={{ fontSize: 44, marginBottom: 10 }}>⚖️</div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 19, color: "#1A1A1A", marginBottom: 8 }}>Mediation requested</div>
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 19, color: "#1A1A1A", marginBottom: 8 }}>Mediation requested</div>
           <div style={{ display: "inline-block", background: "#FEF3C7", borderRadius: 100, padding: "5px 16px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: "#D97706", marginBottom: 12 }}>Case {caseRef}</div>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#666", lineHeight: 1.6 }}>
             A community mediator will review your case within <strong style={{ color: "#1A1A1A" }}>3–5 business days</strong>. Both parties will be contacted with next steps.
@@ -4520,7 +4519,7 @@ function StatusPill({ status, contractType }) {
 function AiBox({ aiQuery, setAiQuery, loading, result, suggested, run, onSelect, compact }) {
   return (
     <div className="ai-box">
-      <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: compact ? 13 : 15, color: "#fff" }}>🤖 AI Matchmaker</div>
+      <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: compact ? 13 : 15, color: "#fff" }}>🤖 AI Matchmaker</div>
       {!compact && <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "rgba(255,255,255,.6)", marginTop: 3 }}>Describe what you're looking for and I'll find matches.</p>}
       <div style={{ display: "flex", gap: 8, marginTop: 11 }}>
         <input className="ai-inp" placeholder="e.g. someone to paint my living room..." value={aiQuery} onChange={e => setAiQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && run()} />
@@ -4559,7 +4558,7 @@ function ContractPreviewSheet({ data, myName }) {
     <div className="ctrct-wrap">
       {/* Header */}
       <div className="ctrct-header">
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#E85D3A" }}>Bartr Exchange Agreement</div>
+        <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, color: "#E85D3A" }}>Bartr Exchange Agreement</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "rgba(255,255,255,.55)", marginTop: 3 }}>v{version} · {date}</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "rgba(255,255,255,.7)", marginTop: 5 }}>
           {party1} ⇄ {party2}
@@ -4846,7 +4845,7 @@ function NotificationsPanel({ notifications, onMarkAllRead, onMarkRead, onClear,
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px 11px", borderBottom: "1.5px solid #F0EDE6", flexShrink: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "#1A1A1A" }}>Notifications</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "#1A1A1A" }}>Notifications</div>
             {unread > 0 && (
               <span style={{ background: "#E85C7A", color: "#fff", borderRadius: 100, padding: "1px 7px", fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700 }}>{unread} new</span>
             )}
@@ -4949,7 +4948,7 @@ function ReportModal({ listing, alreadyReported, onReport, onClose }) {
 
         {!submitted ? (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#1A1A1A", marginBottom: 3 }}>Report listing</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 18, color: "#1A1A1A", marginBottom: 3 }}>Report listing</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 18, lineHeight: 1.6 }}>
               What's wrong with <strong style={{ color: "#1A1A1A" }}>{listing.title}</strong> by {listing.businessName || listing.name}?
             </p>
@@ -4983,7 +4982,7 @@ function ReportModal({ listing, alreadyReported, onReport, onClose }) {
         ) : (
           <div style={{ textAlign: "center", padding: "20px 0" }}>
             <div style={{ fontSize: 48, marginBottom: 14 }}>🛡️</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 21, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 8 }}>Report received</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 21, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 8 }}>Report received</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#777", lineHeight: 1.65, marginBottom: 22 }}>
               Thank you for helping keep Bartr safe. Our team will review this listing and take action if needed.
             </p>
@@ -5084,7 +5083,7 @@ function EmailConfirmModal({ data, onClose }) {
         <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
         <div style={{ textAlign: "center", marginBottom: 18 }}>
           <div style={{ fontSize: 44, marginBottom: 10 }}>📧</div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A", marginBottom: 6 }}>Confirmation emails sent!</div>
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "#1A1A1A", marginBottom: 6 }}>Confirmation emails sent!</div>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#777", lineHeight: 1.6 }}>
             Both parties received a thank you email with the signed contract for <strong style={{ color: "#1A1A1A" }}>{listingTitle}</strong>.
           </p>
@@ -5273,7 +5272,7 @@ function ReviewModal({ listing, onSubmit, onSkip }) {
         {!submitted ? (
           <>
             <div style={{ fontSize: 36, marginBottom: 6 }}>🤝</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A", marginBottom: 5 }}>How did it go?</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "#1A1A1A", marginBottom: 5 }}>How did it go?</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 4, lineHeight: 1.6 }}>
               Rate your exchange with <strong style={{ color: "#1A1A1A" }}>{listing.name}</strong>
             </p>
@@ -5309,7 +5308,7 @@ function ReviewModal({ listing, onSubmit, onSkip }) {
         ) : (
           <div style={{ padding: "20px 0" }}>
             <div style={{ fontSize: 52, marginBottom: 14 }}>🌟</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Review submitted!</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, color: "#1A1A1A" }}>Review submitted!</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginTop: 8 }}>Thank you for helping build trust in the community.</p>
           </div>
         )}
@@ -5373,7 +5372,7 @@ function OnboardingOverlay({ onDone }) {
       {/* Content */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 36px", textAlign: "center" }}>
         <div style={{ fontSize: 72, marginBottom: 28, lineHeight: 1 }}>{s.emoji}</div>
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: s.color, marginBottom: 16, lineHeight: 1.2 }}>{s.title}</div>
+        <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, letterSpacing: "-0.01em", color: s.color, marginBottom: 16, lineHeight: 1.2 }}>{s.title}</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, color: s.sub, lineHeight: 1.7, maxWidth: 300 }}>{s.body}</div>
       </div>
 
@@ -5456,7 +5455,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
   return (
     <div style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: "#F0EEE9", minHeight: "100vh", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
         .a-inp{width:100%;padding:13px 44px 13px 15px;border:1.5px solid #DDD8CE;border-radius:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#1A1A1A;outline:none;transition:border .2s}
         .a-inp:focus{border-color:#E85D3A}
@@ -5482,7 +5481,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
           {/* Hero */}
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", paddingTop: 60 }}>
             <svg width="88" height="88" viewBox="0 0 96 96" style={{ marginBottom: 20 }}><circle cx="48" cy="48" r="44" fill="#1A1A1A"/><text x="22" y="68" fontFamily="Georgia,serif" fontSize="54" fontWeight="800" fill="white">B</text><line x1="58" y1="22" x2="73" y2="22" stroke="#E85D3A" strokeWidth="4" strokeLinecap="round"/><polygon points="80,22 70,17 70,27" fill="#E85D3A"/><line x1="80" y1="32" x2="65" y2="32" stroke="white" strokeWidth="4" strokeLinecap="round"/><polygon points="58,32 68,27 68,37" fill="white"/></svg>
-            <h1 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 30, letterSpacing: "-0.01em", color: "#1A1A1A", lineHeight: 1.15, marginBottom: 14 }}>
+            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, letterSpacing: "-0.01em", color: "#1A1A1A", lineHeight: 1.15, marginBottom: 14 }}>
               Trade skills.<br />Exchange goods.<br /><span style={{ color: "#E85D3A" }}>Build community.</span>
             </h1>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, maxWidth: 300 }}>
@@ -5493,7 +5492,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
             <div style={{ display: "flex", gap: 20, marginTop: 28, marginBottom: 40 }}>
               {[["247", "Members"], ["1.2k", "Trades"], ["⭐ 4.9", "Avg rating"]].map(([n, l]) => (
                 <div key={l} style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#1A1A1A" }}>{n}</div>
+                  <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 18, color: "#1A1A1A" }}>{n}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#aaa", marginTop: 2 }}>{l}</div>
                 </div>
               ))}
@@ -5519,7 +5518,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signin" && (
         <div style={{ flex: 1, padding: "48px 28px 40px" }} className="fade-up">
           <button onClick={() => reset("landing")} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888", cursor: "pointer", marginBottom: 28, padding: 0 }}>← Back</button>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Welcome back</h2>
+          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Welcome back</h2>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 28 }}>Sign in to your Bartr account.</p>
 
           {/* Social sign-in (mock) */}
@@ -5571,7 +5570,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signup" && !signupDone && (
         <div style={{ flex: 1, padding: "48px 28px 40px" }} className="fade-up">
           <button onClick={() => reset("landing")} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888", cursor: "pointer", marginBottom: 28, padding: 0 }}>← Back</button>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Create account</h2>
+          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Create account</h2>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 24 }}>Join Bartr — it's free.</p>
 
           {/* Social sign-up */}
@@ -5642,7 +5641,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signup" && signupDone && (
         <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 28px", textAlign: "center" }} className="fade-up">
           <div style={{ fontSize: 56, marginBottom: 18 }}>📬</div>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 10 }}>Check your email</h2>
+          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 10 }}>Check your email</h2>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, marginBottom: 28 }}>
             We've sent a verification link to <strong style={{ color: "#1A1A1A" }}>{email}</strong>. Click the link to activate your account.
           </p>
@@ -5666,7 +5665,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
 
           {!resetSent ? (
             <>
-              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Reset password</h2>
+              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Reset password</h2>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 28, lineHeight: 1.6 }}>Enter the email address linked to your account and we'll send you a reset link.</p>
               {error && <div className="a-err">⚠️ {error}</div>}
               <div className="inp-wrap">
@@ -5677,7 +5676,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
           ) : (
             <div style={{ textAlign: "center", paddingTop: 40 }} className="fade-up">
               <div style={{ fontSize: 52, marginBottom: 16 }}>✉️</div>
-              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 24, color: "#1A1A1A", marginBottom: 10 }}>Reset link sent</h2>
+              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 24, color: "#1A1A1A", marginBottom: 10 }}>Reset link sent</h2>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, marginBottom: 28 }}>
                 Check <strong style={{ color: "#1A1A1A" }}>{email}</strong> for a password reset link. It expires in 15 minutes.
               </p>
@@ -5758,7 +5757,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
           <>
             <div style={{ textAlign: "center", marginBottom: 22 }}>
               <div style={{ fontSize: 42, marginBottom: 10 }}>🪪</div>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Get Verified</div>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, color: "#1A1A1A" }}>Get Verified</div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", marginTop: 6, lineHeight: 1.6 }}>A one-time identity check adds a verified badge to your profile — building trust with every listing.</div>
             </div>
             <div style={{ background: "#F7FDF9", border: "1.5px solid #BBF7D0", borderRadius: 16, padding: 16, marginBottom: 20 }}>
@@ -5767,7 +5766,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
               ))}
             </div>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <span style={{ fontFamily: "'Instrument Serif',serif", fontSize: 32, color: "#1A1A1A" }}>$4.99</span>
+              <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 32, color: "#1A1A1A" }}>$4.99</span>
               <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#aaa", marginLeft: 6 }}>one-time</span>
             </div>
             <button className="bgr" onClick={() => setCheckoutPlan("verify")} style={{ background: "#D97706" }}>Continue to payment →</button>
@@ -5777,7 +5776,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
           /* ── UPGRADE MODE ── */
           <>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Upgrade to Pro</div>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, color: "#1A1A1A" }}>Upgrade to Pro</div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginTop: 5 }}>Everything you need to trade professionally.</div>
             </div>
 
@@ -5800,7 +5799,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: "#1A1A1A" }}>Free</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa" }}>Forever free</div>
                   </div>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#1A1A1A" }}>$0</div>
+                  <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, color: "#1A1A1A" }}>$0</div>
                 </div>
                 {PLANS.free.features.map(f => <div key={f} className="price-feat">✓ {f}</div>)}
                 {PLANS.free.missing.map(f => <div key={f} className="price-feat missing">✗ {f}</div>)}
@@ -5820,7 +5819,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
                     </div>
                   </div>
                   <div style={{ textAlign: "right" }}>
-                    <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#1A1A1A" }}>
+                    <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, color: "#1A1A1A" }}>
                       ${cycle === "yearly" ? "99" : "12"}
                     </div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#aaa" }}>{cycle === "yearly" ? "/ year" : "/ month"}</div>
@@ -5864,7 +5863,7 @@ function MockCheckout({ item, onSuccess, onCancel }) {
     <div className="overlay">
       <div className="sheet" style={{ padding: "40px 28px", textAlign: "center" }}>
         <div style={{ fontSize: 52, marginBottom: 14 }}>✅</div>
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A", marginBottom: 8 }}>Payment successful</div>
+        <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, color: "#1A1A1A", marginBottom: 8 }}>Payment successful</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888" }}>Setting up your account…</div>
       </div>
     </div>
@@ -5880,7 +5879,7 @@ function MockCheckout({ item, onSuccess, onCancel }) {
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{item.name}</div>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#888", marginTop: 2 }}>{item.desc}</div>
           </div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A" }}>${item.price}</div>
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, color: "#1A1A1A" }}>${item.price}</div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 16 }}>
@@ -6070,7 +6069,7 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
                 : <div className="ava" style={{ width: 52, height: 52, borderRadius: catOf(selected.category).id === "business" ? 12 : "50%", background: catOf(selected.category).color, fontSize: 15, flexShrink: 0 }}>{selected.avatar}</div>
               }
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#1A1A1A", lineHeight: 1.25 }}>{selected.title}</div>
+                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, color: "#1A1A1A", lineHeight: 1.25 }}>{selected.title}</div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#888", marginTop: 2 }}>{selected.businessName || selected.name}</div>
                 <div style={{ display: "flex", gap: 5, marginTop: 5, flexWrap: "wrap" }}>
                   <span className="nbhd-badge">📍 {selected.neighbourhood}</span>
@@ -6166,7 +6165,7 @@ function ListingCard({ listing, onClick, isFav, onFav, onReport, onBlock, isRepo
             <span style={{ position: "absolute", top: 9, left: 11, background: "rgba(0,0,0,.45)", borderRadius: 100, padding: "2px 8px", fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#fff" }}>📷 {listing.photos.length}</span>
           )}
           <div style={{ position: "absolute", bottom: 10, left: 12, right: 12 }}>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#fff", lineHeight: 1.25 }}>{listing.title}</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, color: "#fff", lineHeight: 1.25 }}>{listing.title}</div>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "rgba(255,255,255,.75)", marginTop: 2 }}>{isBiz ? listing.businessName : listing.name}</div>
           </div>
         </div>
@@ -6178,7 +6177,7 @@ function ListingCard({ listing, onClick, isFav, onFav, onReport, onBlock, isRepo
           {!cover && (
             <>
               <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", paddingRight: showMenu ? 28 : 0 }}>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#1A1A1A" }}>{listing.title}</div>
+                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, color: "#1A1A1A" }}>{listing.title}</div>
                 {isBiz && <span className="biz-badge">🏢 Biz</span>}
               </div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#999", marginTop: 1 }}>{isBiz ? listing.businessName : listing.name}</div>
