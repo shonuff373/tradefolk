@@ -4,7 +4,7 @@ import { Home, Search, Clock, MessageSquare, User, Bell } from "lucide-react";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
-  { id: "home", label: "Home & Garden", icon: "🏡", color: "#4CAF82" },
+  { id: "home", label: "Home & Garden", icon: "🏡", color: "#E85D3A" },
   { id: "tech", label: "Tech & Digital", icon: "💻", color: "#4B8EF0" },
   { id: "food", label: "Food & Baking", icon: "🍞", color: "#E8854A" },
   { id: "care", label: "Care & Childcare", icon: "🤝", color: "#C47FD5" },
@@ -63,7 +63,7 @@ const LISTINGS = [
     photos: [0,1].map(i => makePlaceholder("#56C0A6","Yoga & Wellness",i)) },
   { id: 7, name: "Derek P.", avatar: "DP", category: "home", title: "Lawn Care & Landscaping", desc: "Mowing, trimming, garden cleanup. Weekly or one-time.", type: "service", rating: 4.8, trades: 29,
     neighbourhood: "Oak Heights", mapPos: { x: 322, y: 40 },
-    photos: [0,1].map(i => makePlaceholder("#4CAF82","Lawn & Garden",i)) },
+    photos: [0,1].map(i => makePlaceholder("#E85D3A","Lawn & Garden",i)) },
   { id: 8, name: "Sofia R.", avatar: "SR", category: "care", title: "Professional Hairstylist", desc: "Cuts, color, styling. 12 years exp. House calls available.", type: "service", rating: 5.0, trades: 44,
     accountType: "business", businessName: "Sofia R. Hair", businessType: "Sole Trader",
     neighbourhood: "Harbourside", mapPos: { x: 322, y: 215 },
@@ -73,10 +73,10 @@ const LISTINGS = [
     accountType: "business", businessName: "Carlos V. Painting Co.", businessType: "LLC / Limited Company",
     neighbourhood: "Riverside", mapPos: { x: 245, y: 110 },
     socials: { instagram: "instagram.com/carlosvpainting", facebook: "facebook.com/carlosvpainting", yelp: "yelp.com/biz/carlos-v-painting", website: "carlosvpainting.com" }, socialsPublic: true,
-    photos: [0,1].map(i => makePlaceholder("#4CAF82","Painting",i)) },
+    photos: [0,1].map(i => makePlaceholder("#E85D3A","Painting",i)) },
 ];
 
-const DISCLAIMER = `DISCLAIMER OF LIABILITY: tradefolk acts solely as a platform to connect independent users and is not a party to any exchange, agreement, or transaction between users. tradefolk makes no representations or warranties regarding the quality, safety, legality, or accuracy of any listings, goods, or services. Users enter into all exchanges entirely at their own risk. tradefolk shall not be held liable for any loss, damage, injury, dispute, or harm of any kind arising from any exchange facilitated through this platform. This agreement is between the two named parties only.\n\nCOMMUNITY STANDARDS: Both parties confirm this exchange involves no illegal goods, illegal substances, controlled substances without valid prescription, or services of a sexual nature. Violations may result in permanent removal from the platform and may be reported to appropriate authorities.`;
+const DISCLAIMER = `DISCLAIMER OF LIABILITY: Bartr acts solely as a platform to connect independent users and is not a party to any exchange, agreement, or transaction between users. Bartr makes no representations or warranties regarding the quality, safety, legality, or accuracy of any listings, goods, or services. Users enter into all exchanges entirely at their own risk. Bartr shall not be held liable for any loss, damage, injury, dispute, or harm of any kind arising from any exchange facilitated through this platform. This agreement is between the two named parties only.\n\nCOMMUNITY STANDARDS: Both parties confirm this exchange involves no illegal goods, illegal substances, controlled substances without valid prescription, or services of a sexual nature. Violations may result in permanent removal from the platform and may be reported to appropriate authorities.`;
 
 const catOf = (id) => CATEGORIES.find(c => c.id === id) || CATEGORIES[CATEGORIES.length - 1];
 
@@ -131,18 +131,18 @@ const SOCIAL_PLATFORMS = [
 
 const THEMES = {
   natural: { id: "natural", label: "Natural", emoji: "🌿",
-    bg: "#F7F4EF", card: "#ffffff", nav: "#ffffff", sheet: "#ffffff",
-    primary: "#2D3A2E", accent: "#4CAF82", border: "#E5E2DC",
+    bg: "#F0EEE9", card: "#ffffff", nav: "#ffffff", sheet: "#ffffff",
+    primary: "#1A1A1A", accent: "#E85D3A", border: "#E5E2DC",
     input: "#FDFCFA", inputBorder: "#DDD8CE",
-    text: "#2D3A2E", subtext: "#777777", muted: "#999999",
-    chipOn: "#2D3A2E", chipOnText: "#F7F4EF",
+    text: "#1A1A1A", subtext: "#777777", muted: "#999999",
+    chipOn: "#1A1A1A", chipOnText: "#F0EEE9",
   },
   dark: { id: "dark", label: "Dark", emoji: "🌙",
     bg: "#141A15", card: "#1E271F", nav: "#1A211B", sheet: "#1E271F",
-    primary: "#E2EAE2", accent: "#4CAF82", border: "#2D3A2E",
-    input: "#19221A", inputBorder: "#2D3A2E",
+    primary: "#E2EAE2", accent: "#E85D3A", border: "#1A1A1A",
+    input: "#19221A", inputBorder: "#1A1A1A",
     text: "#E2EAE2", subtext: "#8A9E8C", muted: "#5A6E5C",
-    chipOn: "#4CAF82", chipOnText: "#ffffff",
+    chipOn: "#E85D3A", chipOnText: "#ffffff",
   },
   sage: { id: "sage", label: "Sage", emoji: "🪴",
     bg: "#EDF2EE", card: "#F5FAF6", nav: "#F5FAF6", sheet: "#F5FAF6",
@@ -231,7 +231,7 @@ function buildThemeCSS(t) {
     ".profile-edit-overlay{background:" + t.bg + "}" +
     ".profile-edit-header{background:" + t.card + ";border-color:" + t.border + "}" +
     ".rev-card{border-bottom-color:" + t.border + "}" +
-    ".rev-reply{background:" + (t.id==="dark"?"#1A2B1C":"#F0F9F3") + ";border-color:" + (t.id==="dark"?"#2D3A2E":"#C8E6D4") + "}" +
+    ".rev-reply{background:" + (t.id==="dark"?"#1A2B1C":"#F0F9F3") + ";border-color:" + (t.id==="dark"?"#1A1A1A":"#C8E6D4") + "}" +
     ".rev-reply-input{background:" + t.input + ";border-color:" + t.inputBorder + ";color:" + t.text + "}" +
     ".rev-reply-input::placeholder{color:" + t.muted + "}" +
     ".rev-avatar{background:" + t.primary + "}" +
@@ -258,7 +258,7 @@ function buildThemeCSS(t) {
     ".msg-input{background:" + t.input + ";color:" + t.text + "}" +
     ".msg-input::placeholder{color:" + t.muted + "}" +
     ".detail-header-btn{background:" + t.card + ";color:" + t.text + ";border-color:" + t.border + "}" +
-    ".avail-dot-open{color:#4CAF82}" +
+    ".avail-dot-open{color:#E85D3A}" +
     ".avail-dot-limited{color:#F59E0B}" +
     ".avail-dot-closed{color:#EF4444}" +
     ".plan-card{background:" + t.card + ";border-color:" + t.border + "}" +
@@ -295,7 +295,7 @@ const PLANS = {
   },
   pro: {
     id: "pro", name: "Pro", price: 12, yearlyPrice: 99,
-    color: "#4CAF82", badge: "⭐ Pro",
+    color: "#E85D3A", badge: "⭐ Pro",
     listingLimit: 10,
     socialLimit: 6,
     features: [
@@ -381,7 +381,7 @@ const BADGE_DEFS = [
   {
     id: "pro",
     icon: "👑", label: "Pro Member",
-    desc: "Tradefolk Pro subscriber",
+    desc: "Bartr Pro subscriber",
     color: "#9333EA", bg: "#FAF5FF", border: "#E9D5FF",
     test: ({ isPro }) => isPro,
     next: ({ isPro }) => !isPro ? "Upgrade to Pro to unlock" : null,
@@ -419,14 +419,14 @@ function buildContract({ party1, party2, details1, details2, date, version = 1, 
   const termClause = contractType === "ongoing"
     ? `TERM & RENEWAL
 
-This agreement is effective from ${date} for an initial term of one (1) year. It will automatically renew for successive one-year terms unless either party provides at least thirty (30) days written notice of termination via the tradefolk platform prior to the renewal date.
+This agreement is effective from ${date} for an initial term of one (1) year. It will automatically renew for successive one-year terms unless either party provides at least thirty (30) days written notice of termination via the Bartr platform prior to the renewal date.
 
-Either party may terminate this agreement at any time by providing thirty (30) days notice through the tradefolk platform. Obligations incurred prior to termination remain in effect.`
+Either party may terminate this agreement at any time by providing thirty (30) days notice through the Bartr platform. Obligations incurred prior to termination remain in effect.`
     : `TERM
 
 This is a one-time exchange agreement. It is fulfilled when both parties have completed their stated obligations.`;
 
-  return `TRADEFOLK EXCHANGE AGREEMENT  (v${version})
+  return `BARTR EXCHANGE AGREEMENT  (v${version})
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 DATE: ${date}
 TYPE: ${contractType === "ongoing" ? "Ongoing (annual, auto-renewing)" : "One-time exchange"}
@@ -479,7 +479,7 @@ const ACK_REPLIES = [
 // ─── MOCK AUTH STORE (replaces a real backend in production) ─────────────────
 // In production: swap this for JWT / OAuth / Supabase / Firebase Auth etc.
 const MOCK_USERS = [
-  { id: "u1", email: "demo@tradefolk.com", password: "demo1234", name: "Demo User", verified: true },
+  { id: "u1", email: "demo@bartr.app", password: "demo1234", name: "Demo User", verified: true },
 ];
 let _userStore = [...MOCK_USERS];
 
@@ -829,7 +829,7 @@ export default function App() {
     }));
     // Trigger email confirmation modal
     const myEmail = profile.email || authUser?.email || "you";
-    const theirEmail = `${conv.listing.name.toLowerCase().replace(/\s/g, ".")}@tradefolk.com`;
+    const theirEmail = `${conv.listing.name.toLowerCase().replace(/\s/g, ".")}@bartr.app`;
     setEmailConfirm({
       to1: myEmail,
       to2: theirEmail,
@@ -947,7 +947,7 @@ export default function App() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514", max_tokens: 800,
-          system: `You are a marketplace assistant for tradefolk. Match user needs to listings. Never suggest illegal/sexual services. Reply ONLY valid JSON no backticks: {"message":"1-2 sentences","matchedIds":[up to 3 integer IDs],"tip":"one short tip"}`,
+          system: `You are a marketplace assistant for Bartr. Match user needs to listings. Never suggest illegal/sexual services. Reply ONLY valid JSON no backticks: {"message":"1-2 sentences","matchedIds":[up to 3 integer IDs],"tip":"one short tip"}`,
           messages: [{ role: "user", content: `Looking for: "${aiQuery}"\nListings:\n${summary}` }]
         })
       });
@@ -1106,9 +1106,9 @@ export default function App() {
   // ── LOADING SPLASH (while session restores) ───────────────────────────────
   if (!storageReady) {
     return (
-      <div style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: "#F7F4EF", minHeight: "100vh", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#2D3A2E" }}>trade<span style={{ color: "#4CAF82" }}>folk</span></div>
-        <div style={{ width: 36, height: 36, border: "3px solid #E5E2DC", borderTop: "3px solid #4CAF82", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
+      <div style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: "#F0EEE9", minHeight: "100vh", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
+        <svg width="52" height="52" viewBox="0 0 96 96"><circle cx="48" cy="48" r="44" fill="#1A1A1A"/><text x="22" y="68" fontFamily="Georgia,serif" fontSize="54" fontWeight="800" fill="white">B</text><line x1="58" y1="22" x2="73" y2="22" stroke="#E85D3A" strokeWidth="4" strokeLinecap="round"/><polygon points="80,22 70,17 70,27" fill="#E85D3A"/><line x1="80" y1="32" x2="65" y2="32" stroke="white" strokeWidth="4" strokeLinecap="round"/><polygon points="58,32 68,27 68,37" fill="white"/></svg>
+        <div style={{ width: 36, height: 36, border: "3px solid #E5E2DC", borderTop: "3px solid #E85D3A", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#aaa" }}>Restoring your session…</div>
       </div>
@@ -1123,19 +1123,19 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
-        .bp{background:#2D3A2E;color:#F7F4EF;border:none;border-radius:100px;padding:13px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;width:100%}
+        .bp{background:#1A1A1A;color:#F0EEE9;border:none;border-radius:100px;padding:13px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;width:100%}
         .bp:hover{background:#3D5040;transform:translateY(-1px)} .bp:active{transform:scale(.97)!important} .bp:disabled{opacity:.4;cursor:default;transform:none}
-        .bg{background:transparent;color:#2D3A2E;border:1.5px solid #2D3A2E;border-radius:100px;padding:11px 22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;cursor:pointer;transition:all .2s;width:100%}
-        .bg:hover{background:#2D3A2E;color:#F7F4EF} .bg:active{transform:scale(.97)}
-        .bgr{background:#4CAF82;color:#fff;border:none;border-radius:100px;padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;width:100%;transition:all .2s}
+        .bg{background:transparent;color:#1A1A1A;border:1.5px solid #1A1A1A;border-radius:100px;padding:11px 22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;cursor:pointer;transition:all .2s;width:100%}
+        .bg:hover{background:#1A1A1A;color:#F0EEE9} .bg:active{transform:scale(.97)}
+        .bgr{background:#E85D3A;color:#fff;border:none;border-radius:100px;padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;width:100%;transition:all .2s}
         .bgr:hover{background:#3D9E72} .bgr:active{transform:scale(.97)}
-        .inp{width:100%;padding:12px 15px;border:1.5px solid #DDD8CE;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#2D3A2E;outline:none;transition:border .2s}
-        .inp:focus{border-color:#4CAF82} textarea.inp{resize:none;min-height:80px}
-        .card{background:#fff;border-radius:18px;padding:16px;box-shadow:0 2px 12px rgba(45,58,46,.06);margin-bottom:9px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent}
-        .card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(45,58,46,.1);border-color:#E0DDD6} .card:active{transform:scale(.985)}
+        .inp{width:100%;padding:12px 15px;border:1.5px solid #DDD8CE;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#1A1A1A;outline:none;transition:border .2s}
+        .inp:focus{border-color:#E85D3A} textarea.inp{resize:none;min-height:80px}
+        .card{background:#fff;border-radius:18px;padding:16px;box-shadow:0 2px 12px rgba(26,26,26,.06);margin-bottom:9px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent}
+        .card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(26,26,26,.1);border-color:#E0DDD6} .card:active{transform:scale(.985)}
         .ava{border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;color:#fff;flex-shrink:0}
-        .chip{padding:6px 13px;border-radius:100px;border:1.5px solid #DDD8CE;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;cursor:pointer;white-space:nowrap;background:#fff;transition:all .15s;color:#2D3A2E}
-        .chip.on{background:#2D3A2E;color:#F7F4EF;border-color:#2D3A2E} .chip:active{transform:scale(.94)}
+        .chip{padding:6px 13px;border-radius:100px;border:1.5px solid #DDD8CE;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;cursor:pointer;white-space:nowrap;background:#fff;transition:all .15s;color:#1A1A1A}
+        .chip.on{background:#1A1A1A;color:#F0EEE9;border-color:#1A1A1A} .chip:active{transform:scale(.94)}
         @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
         .skel{border-radius:8px;background:linear-gradient(90deg,#E8E5E0 25%,#F0EDE8 50%,#E8E5E0 75%);background-size:800px 100%;animation:shimmer 1.4s infinite}
         @keyframes screenIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -1144,38 +1144,38 @@ export default function App() {
         .sheet{background:#fff;border-radius:26px 26px 0 0;padding:22px 22px 52px;width:100%;max-width:720px;animation:su .25s;max-height:92vh;overflow-y:auto}
         @keyframes fi{from{opacity:0}to{opacity:1}} @keyframes su{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
         @media(min-width:601px){.overlay{align-items:center}.sheet{border-radius:26px;width:auto;min-width:440px}}
-        .toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#2D3A2E;color:#fff;padding:11px 22px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;z-index:300;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.2)}
+        .toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#1A1A1A;color:#fff;padding:11px 22px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;z-index:300;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.2)}
         .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px} @media(min-width:600px){.cat-grid{grid-template-columns:repeat(5,1fr)}}
         .cat-tile{border-radius:13px;padding:13px 8px;text-align:center;cursor:pointer;transition:all .2s;border:2px solid transparent;background:#fff}
-        .cat-tile.sel{border-color:#2D3A2E}
-        .stitle{font-family:'Instrument Serif',serif;color:#2D3A2E;letter-spacing:-0.01em}
+        .cat-tile.sel{border-color:#1A1A1A}
+        .stitle{font-family:'Instrument Serif',serif;color:#1A1A1A;letter-spacing:-0.01em}
         .tbtn{flex:1;padding:10px;border-radius:11px;border:1.5px solid #DDD8CE;background:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .15s;color:#555;text-align:center}
-        .tbtn.on{background:#2D3A2E;color:#fff;border-color:#2D3A2E}
+        .tbtn.on{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
         .warn{background:#FFF8F0;border:1.5px solid #F0B429;border-radius:13px;padding:11px 13px;margin-bottom:14px;display:flex;gap:9px;align-items:flex-start}
-        .ai-box{background:linear-gradient(135deg,#2D3A2E 0%,#3D5C42 100%);border-radius:18px;padding:18px;margin-bottom:16px}
+        .ai-box{background:linear-gradient(135deg,#1A1A1A 0%,#3D5C42 100%);border-radius:18px;padding:18px;margin-bottom:16px}
         .ai-inp{flex:1;padding:11px 15px;border-radius:100px;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;background:rgba(255,255,255,.15);color:#fff;outline:none}
         .ai-inp::placeholder{color:rgba(255,255,255,.5)}
         .ai-res{background:rgba(255,255,255,.1);border-radius:13px;padding:13px;margin-top:11px}
         .cbox{background:#FDFCFA;border:1.5px solid #E0DDD6;border-radius:14px;padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;color:#444;white-space:pre-wrap;line-height:1.75;max-height:260px;overflow-y:auto}
         .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
         .pbar{height:4px;background:#E5E2DC;border-radius:100px;overflow:hidden}
-        .pfill{height:100%;background:#4CAF82;border-radius:100px;transition:width .3s}
+        .pfill{height:100%;background:#E85D3A;border-radius:100px;transition:width .3s}
         /* CHAT */
         .chat-wrap{display:flex;flex-direction:column;height:calc(100vh - 130px)}
         .chat-msgs{flex:1;overflow-y:auto;padding:12px 0 8px}
         .bubble{max-width:78%;padding:10px 14px;border-radius:18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;line-height:1.5;margin-bottom:6px;word-break:break-word}
-        .bubble.me{background:#2D3A2E;color:#fff;border-bottom-right-radius:4px;margin-left:auto}
-        .bubble.them{background:var(--tf-card,#fff);color:var(--tf-text,#2D3A2E);border-bottom-left-radius:4px;box-shadow:0 1px 6px rgba(0,0,0,.07)}
-        .bubble.sys{background:var(--tf-input,#F0F7F2);color:#4CAF82;border-radius:12px;font-size:12px;text-align:center;margin:6px auto;max-width:90%;font-weight:500}
+        .bubble.me{background:#1A1A1A;color:#fff;border-bottom-right-radius:4px;margin-left:auto}
+        .bubble.them{background:var(--tf-card,#fff);color:var(--tf-text,#1A1A1A);border-bottom-left-radius:4px;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+        .bubble.sys{background:var(--tf-input,#F0F7F2);color:#E85D3A;border-radius:12px;font-size:12px;text-align:center;margin:6px auto;max-width:90%;font-weight:500}
         .chat-input-row{display:flex;gap:8px;padding:10px 0 0;border-top:1px solid var(--tf-border,#EDEAE4);align-items:flex-end}
-        .chat-inp{flex:1;padding:10px 14px;border:1.5px solid var(--tf-border,#DDD8CE);border-radius:20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;background:var(--tf-input,#FDFCFA);color:var(--tf-text,#2D3A2E);outline:none;resize:none;max-height:80px;line-height:1.4}
-        .chat-inp:focus{border-color:#4CAF82}
-        .send-btn{width:40px;height:40px;border-radius:50%;background:#2D3A2E;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
-        .send-btn:hover{background:#4CAF82}
+        .chat-inp{flex:1;padding:10px 14px;border:1.5px solid var(--tf-border,#DDD8CE);border-radius:20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;background:var(--tf-input,#FDFCFA);color:var(--tf-text,#1A1A1A);outline:none;resize:none;max-height:80px;line-height:1.4}
+        .chat-inp:focus{border-color:#E85D3A}
+        .send-btn{width:40px;height:40px;border-radius:50%;background:#1A1A1A;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+        .send-btn:hover{background:#E85D3A}
         /* intake chat */
         .intake-msg{padding:10px 14px;border-radius:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;line-height:1.55;margin-bottom:8px;max-width:88%}
-        .intake-msg.ai{background:#2D3A2E;color:#fff;border-bottom-left-radius:4px}
-        .intake-msg.user{background:var(--tf-input,#E8F5EC);color:var(--tf-text,#2D3A2E);border-bottom-right-radius:4px;margin-left:auto}
+        .intake-msg.ai{background:#1A1A1A;color:#fff;border-bottom-left-radius:4px}
+        .intake-msg.user{background:var(--tf-input,#E8F5EC);color:var(--tf-text,#1A1A1A);border-bottom-right-radius:4px;margin-left:auto}
         .intake-msg.sys{background:#FFF8F0;color:#7A5C00;border-radius:12px;font-size:12px;max-width:100%;text-align:center;padding:8px 14px}
         .nav-i{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:8px 6px;flex:1;position:relative}
         .nl{font-size:10px;font-family:'Plus Jakarta Sans',sans-serif;color:inherit}
@@ -1184,29 +1184,29 @@ export default function App() {
         .status-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:13px;margin-bottom:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px}
         .status-pending{background:#FFF3E0;color:#E8854A}
         .status-countered{background:#EEF2FF;color:#4B8EF0}
-        .status-agreed{background:#E8F5EC;color:#4CAF82}
+        .status-agreed{background:#E8F5EC;color:#E85D3A}
         .status-terminated{background:#F3F3F3;color:#999}
         .status-disputed{background:#FEF3C7;color:#D97706}
         /* account type picker */
         .acct-type{border-radius:18px;padding:18px 16px;border:2px solid var(--tf-border,#E5E2DC);background:var(--tf-card,#fff);cursor:pointer;transition:all .2s;text-align:left}
-        .acct-type.sel{border-color:var(--tf-primary,#2D3A2E);background:var(--tf-input,#F4F8F4)}
+        .acct-type.sel{border-color:var(--tf-primary,#1A1A1A);background:var(--tf-input,#F4F8F4)}
         .acct-type:hover{border-color:#aaa}
         /* social link row */
         .social-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
         .social-icon{width:34px;height:34px;border-radius:10px;background:#F0F7F2;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
         /* toggle */
-        .toggle-wrap{display:flex;align-items:center;justify-content:space-between;background:var(--tf-bg,#F7F4EF);border-radius:12px;padding:11px 14px;margin-bottom:14px}
+        .toggle-wrap{display:flex;align-items:center;justify-content:space-between;background:var(--tf-bg,#F0EEE9);border-radius:12px;padding:11px 14px;margin-bottom:14px}
         .toggle-track{width:44px;height:24px;border-radius:100px;transition:background .2s;cursor:pointer;position:relative;flex-shrink:0}
         .toggle-thumb{width:20px;height:20px;border-radius:50%;background:#fff;position:absolute;top:2px;transition:left .2s;box-shadow:0 1px 4px rgba(0,0,0,.2)}
         /* biz badge */
         .biz-badge{display:inline-flex;align-items:center;gap:3px;background:#E8F0FE;color:#4B8EF0;padding:2px 8px;border-radius:100px;font-size:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600}
         /* social chip on profile */
-        .social-chip{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:100px;background:#fff;border:1.5px solid #E5E2DC;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:#2D3A2E;cursor:pointer;transition:all .15s;text-decoration:none}
-        .social-chip:hover{border-color:#4CAF82;color:#4CAF82}
+        .social-chip{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:100px;background:#fff;border:1.5px solid #E5E2DC;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:#1A1A1A;cursor:pointer;transition:all .15s;text-decoration:none}
+        .social-chip:hover{border-color:#E85D3A;color:#E85D3A}
         /* photo upload */
-        .photo-ring{width:88px;height:88px;border-radius:50%;border:2.5px dashed var(--tf-border,#DDD8CE);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin:0 auto 6px;overflow:hidden;transition:border-color .2s;position:relative;background:var(--tf-bg,#F7F4EF)}
+        .photo-ring{width:88px;height:88px;border-radius:50%;border:2.5px dashed var(--tf-border,#DDD8CE);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin:0 auto 6px;overflow:hidden;transition:border-color .2s;position:relative;background:var(--tf-bg,#F0EEE9)}
         .photo-ring.biz{border-radius:22px}
-        .photo-ring:hover{border-color:#4CAF82}
+        .photo-ring:hover{border-color:#E85D3A}
         .photo-ring img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
         .photo-change{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.45);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;text-align:center;padding:4px 0}
         /* skill tags */
@@ -1214,7 +1214,7 @@ export default function App() {
         .skill-tag{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:100px;background:#E8F5EC;color:#2D7A50;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:500}
         .skill-tag .rm{background:none;border:none;cursor:pointer;color:#2D7A50;font-size:14px;padding:0;line-height:1}
         /* profile section card */
-        .p-section{background:#fff;border-radius:16px;padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 8px rgba(45,58,46,.05)}
+        .p-section{background:#fff;border-radius:16px;padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 8px rgba(26,26,26,.05)}
         .p-section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;color:#999;letter-spacing:.08em;margin-bottom:10px;text-transform:uppercase}
         .p-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
         .p-row:last-child{margin-bottom:0}
@@ -1232,20 +1232,20 @@ export default function App() {
         /* review card */
         .rev-card{padding:12px 0;border-bottom:1px solid #F0EDE6}
         .rev-card:last-child{border-bottom:none;padding-bottom:0}
-        .rev-avatar{width:32px;height:32px;border-radius:50%;background:#2D3A2E;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;color:#fff;flex-shrink:0;overflow:hidden}
+        .rev-avatar{width:32px;height:32px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;color:#fff;flex-shrink:0;overflow:hidden}
         /* structured contract */
         .ctrct-wrap{border-radius:14px;overflow:hidden;border:1.5px solid #E5E2DC;margin-bottom:4px;max-height:65vh;overflow-y:auto}
-        .ctrct-header{background:#2D3A2E;color:#fff;padding:12px 16px}
+        .ctrct-header{background:#1A1A1A;color:#fff;padding:12px 16px}
         .ctrct-mine{background:#FFF8E1;border-left:4px solid #F0B429;padding:14px 16px}
         .ctrct-mine-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;color:#B45309;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
         .ctrct-theirs{background:#F4F8F4;padding:14px 16px;border-top:1px solid #E5E2DC}
         .ctrct-theirs-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;color:#555;letter-spacing:.08em;margin-bottom:6px}
         .ctrct-body{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:#333;line-height:1.6;white-space:pre-wrap;word-break:break-word}
-        .ctrct-disclaimer{background:#F7F4EF;padding:12px 16px;border-top:1px solid #E5E2DC}
+        .ctrct-disclaimer{background:#F0EEE9;padding:12px 16px;border-top:1px solid #E5E2DC}
         .ctrct-disclaimer p{font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;color:#888;line-height:1.55}
         /* email confirm modal */
-        .email-modal-row{display:flex;align-items:center;gap:10px;background:#F7F4EF;border-radius:12px;padding:11px 14px;margin-bottom:8px}
-        .email-modal-icon{width:34px;height:34px;border-radius:50%;background:#2D3A2E;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+        .email-modal-row{display:flex;align-items:center;gap:10px;background:#F0EEE9;border-radius:12px;padding:11px 14px;margin-bottom:8px}
+        .email-modal-icon{width:34px;height:34px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
         /* report modal */
         .report-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:13px;border:1.5px solid #E5E2DC;background:#FDFCFA;cursor:pointer;transition:all .15s;margin-bottom:8px}
         .report-opt.sel{border-color:#EF4444;background:#FEF2F2}
@@ -1256,20 +1256,20 @@ export default function App() {
         .ctx-menu{position:absolute;top:42px;right:9px;z-index:100;background:#fff;border-radius:14px;box-shadow:0 6px 28px rgba(0,0,0,.16);border:1px solid #EDEAE4;min-width:168px;overflow:hidden;animation:fadeIn .12s ease}
         @keyframes fadeIn{from{opacity:0;transform:scale(.95) translateY(-4px)}to{opacity:1;transform:scale(1) translateY(0)}}
         .ctx-item{display:flex;align-items:center;gap:10px;padding:11px 15px;fontFamily:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;transition:background .1s;border:none;background:none;width:100%;text-align:left}
-        .ctx-item:hover{background:#F7F4EF}
+        .ctx-item:hover{background:#F0EEE9}
         .ctx-item.danger{color:#EF4444}
         .ctx-item.danger:hover{background:#FEF2F2}
         /* search bar */
         .search-wrap{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #E5E2DC;border-radius:100px;padding:0 14px;height:42px;transition:border-color .15s;margin-bottom:13px}
-        .search-wrap:focus-within{border-color:#4CAF82;box-shadow:0 0 0 3px rgba(76,175,130,.1)}
-        .search-wrap input{flex:1;border:none;outline:none;fontFamily:'Plus Jakarta Sans',sans-serif;font-size:14px;color:#2D3A2E;background:transparent}
+        .search-wrap:focus-within{border-color:#E85D3A;box-shadow:0 0 0 3px rgba(76,175,130,.1)}
+        .search-wrap input{flex:1;border:none;outline:none;fontFamily:'Plus Jakarta Sans',sans-serif;font-size:14px;color:#1A1A1A;background:transparent}
         .search-wrap input::placeholder{color:#bbb}
         .search-clear{background:none;border:none;cursor:pointer;color:#bbb;font-size:16px;padding:0;line-height:1;display:flex;align-items:center}
         .search-clear:hover{color:#888}
         /* view toggle */
         .view-toggle{display:flex;background:#F0EDE6;border-radius:100px;padding:3px;gap:2px}
         .view-btn{border:none;cursor:pointer;border-radius:100px;padding:5px 13px;fontFamily:'Plus Jakarta Sans',sans-serif;font-size:12px;fontWeight:500;transition:all .15s;background:transparent;color:#888}
-        .view-btn.on{background:#fff;color:#2D3A2E;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+        .view-btn.on{background:#fff;color:#1A1A1A;box-shadow:0 1px 4px rgba(0,0,0,.1)}
         /* map pin popup */
         .map-popup{position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1.5px solid #E5E2DC;border-radius:18px 18px 0 0;padding:16px;box-shadow:0 -4px 24px rgba(0,0,0,.1);animation:slideUp .18s ease}
         @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -1278,55 +1278,55 @@ export default function App() {
         /* plan badge */
         .plan-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700}
         .plan-badge.free{background:#F0EDE6;color:#888}
-        .plan-badge.pro{background:linear-gradient(135deg,#2D3A2E,#4CAF82);color:#fff}
+        .plan-badge.pro{background:linear-gradient(135deg,#1A1A1A,#E85D3A);color:#fff}
         .plan-badge.verified{background:#FFF8E1;color:#F59E0B;border:1px solid #FCD34D}
         /* pricing card */
         .price-card{border-radius:18px;padding:20px;border:2px solid #E5E2DC;background:#fff;transition:border-color .2s}
-        .price-card.highlight{border-color:#4CAF82;background:linear-gradient(160deg,#F7FDF9,#fff)}
+        .price-card.highlight{border-color:#E85D3A;background:linear-gradient(160deg,#F7FDF9,#fff)}
         .price-feat{display:flex;align-items:center;gap:8px;fontFamily:'Plus Jakarta Sans',sans-serif;font-size:13px;color:#444;padding:4px 0}
         .price-feat.missing{color:#bbb}
         /* billing toggle */
         .bill-toggle{display:flex;background:#F0EDE6;border-radius:100px;padding:3px;gap:2px;width:fit-content;margin:0 auto 20px}
         .bill-btn{border:none;cursor:pointer;border-radius:100px;padding:6px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:500;transition:all .15s;background:transparent;color:#888}
-        .bill-btn.on{background:#fff;color:#2D3A2E;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+        .bill-btn.on{background:#fff;color:#1A1A1A;box-shadow:0 1px 4px rgba(0,0,0,.1)}
         /* schedule picker */
         .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
         .cal-nav{background:none;border:none;cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#555;transition:background .15s}
         .cal-nav:hover{background:#F0EDE6}
         .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:12px}
         .cal-dow{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:600;color:#bbb;text-align:center;padding:3px 0;letter-spacing:.04em}
-        .cal-day{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:#2D3A2E;text-align:center;padding:6px 2px;border-radius:8px;cursor:pointer;transition:all .15s;border:none;background:transparent}
+        .cal-day{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:#1A1A1A;text-align:center;padding:6px 2px;border-radius:8px;cursor:pointer;transition:all .15s;border:none;background:transparent}
         .cal-day:hover:not(.past):not(.empty){background:#F0EDE6}
-        .cal-day.today{font-weight:700;color:#4CAF82}
-        .cal-day.sel{background:#2D3A2E !important;color:#fff !important;font-weight:700;border-radius:8px}
+        .cal-day.today{font-weight:700;color:#E85D3A}
+        .cal-day.sel{background:#1A1A1A !important;color:#fff !important;font-weight:700;border-radius:8px}
         .cal-day.past{color:#ddd;cursor:default;pointer-events:none}
         .cal-day.empty{pointer-events:none}
         .cal-day.other{color:#ccc}
         .time-slots{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
         .time-slot{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;padding:7px 13px;border-radius:100px;border:1.5px solid #E5E2DC;background:#fff;cursor:pointer;color:#555;transition:all .15s;white-space:nowrap}
-        .time-slot:hover{border-color:#4CAF82;color:#2D3A2E}
-        .time-slot.sel{background:#2D3A2E;border-color:#2D3A2E;color:#fff;font-weight:600}
+        .time-slot:hover{border-color:#E85D3A;color:#1A1A1A}
+        .time-slot.sel{background:#1A1A1A;border-color:#1A1A1A;color:#fff;font-weight:600}
         /* mock stripe */
-        .stripe-field{width:100%;border:1.5px solid #E5E2DC;border-radius:12px;padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:#2D3A2E;background:#fff;outline:none;box-sizing:border-box;transition:border-color .15s}
-        .stripe-field:focus{border-color:#4CAF82}
+        .stripe-field{width:100%;border:1.5px solid #E5E2DC;border-radius:12px;padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:#1A1A1A;background:#fff;outline:none;box-sizing:border-box;transition:border-color .15s}
+        .stripe-field:focus{border-color:#E85D3A}
         /* notifications */
-        .notif-panel{position:absolute;top:62px;right:0;left:0;z-index:200;background:#fff;border-bottom:1.5px solid #E5E2DC;box-shadow:0 8px 32px rgba(45,58,46,.13);max-height:72vh;display:flex;flex-direction:column;animation:slideDown .2s ease}
+        .notif-panel{position:absolute;top:62px;right:0;left:0;z-index:200;background:#fff;border-bottom:1.5px solid #E5E2DC;box-shadow:0 8px 32px rgba(26,26,26,.13);max-height:72vh;display:flex;flex-direction:column;animation:slideDown .2s ease}
         @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
         .notif-item{display:flex;gap:12px;align-items:flex-start;padding:12px 18px;border-bottom:1px solid #F5F2EE;cursor:pointer;transition:background .15s}
-        .notif-item:hover{background:#F7F4EF}
+        .notif-item:hover{background:#F0EEE9}
         .notif-item.unread{background:#FAFFF9}
         .notif-item.unread:hover{background:#F0F9F3}
         .notif-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-        .notif-dot{width:7px;height:7px;border-radius:50%;background:#4CAF82;flex-shrink:0;margin-top:6px}
+        .notif-dot{width:7px;height:7px;border-radius:50%;background:#E85D3A;flex-shrink:0;margin-top:6px}
         /* DESKTOP LAYOUT */
         .tf-sidebar{display:none}
         @media(min-width:768px){
           .tf-app{display:flex;flex-direction:row;align-items:stretch}
           .tf-sidebar{display:flex;flex-direction:column;width:220px;flex-shrink:0;padding:28px 16px 28px;border-right:1px solid var(--tf-border,#EDEAE4);position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--tf-nav,#fff)}
-          .tf-sidebar-logo{font-size:22px;letter-spacing:-0.01em;color:var(--tf-primary,#2D3A2E);margin-bottom:32px;padding:0 8px}
+          .tf-sidebar-logo{margin-bottom:32px;padding:0;display:flex;justify-content:center;align-items:center}
           .tf-sidebar-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;cursor:pointer;transition:background .15s;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:var(--tf-muted,#888);margin-bottom:4px;position:relative;border:none;background:none;width:100%;text-align:left}
-          .tf-sidebar-item:hover{background:var(--tf-bg,#F7F4EF);color:var(--tf-text,#2D3A2E)}
-          .tf-sidebar-item.on{background:var(--tf-bg,#F7F4EF);color:var(--tf-primary,#2D3A2E);font-weight:600}
+          .tf-sidebar-item:hover{background:var(--tf-bg,#F0EEE9);color:var(--tf-text,#1A1A1A)}
+          .tf-sidebar-item.on{background:var(--tf-bg,#F0EEE9);color:var(--tf-primary,#1A1A1A);font-weight:600}
           .tf-sidebar-icon{font-size:18px;width:24px;text-align:center;flex-shrink:0}
           .tf-main{flex:1;min-width:0;display:flex;flex-direction:column}
           .tf-bottom-nav{display:none !important}
@@ -1336,8 +1336,8 @@ export default function App() {
 
       {/* DESKTOP SIDEBAR */}
       <div className="tf-sidebar">
-        <div className="tf-sidebar-logo" style={{ fontFamily: "'Instrument Serif',serif" }}>
-          trade<span style={{ color: "#4CAF82" }}>folk</span>
+        <div className="tf-sidebar-logo">
+          <svg width="64" height="64" viewBox="0 0 96 96"><circle cx="48" cy="48" r="44" fill="#1A1A1A"/><text x="22" y="68" fontFamily="Georgia,serif" fontSize="54" fontWeight="800" fill="white">B</text><line x1="58" y1="22" x2="73" y2="22" stroke="#E85D3A" strokeWidth="4" strokeLinecap="round"/><polygon points="80,22 70,17 70,27" fill="#E85D3A"/><line x1="80" y1="32" x2="65" y2="32" stroke="white" strokeWidth="4" strokeLinecap="round"/><polygon points="58,32 68,27 68,37" fill="white"/></svg>
         </div>
         {[
           { id: "home",     Icon: Home,           label: "Home" },
@@ -1360,8 +1360,10 @@ export default function App() {
 
       {/* HEADER */}
       <div style={{ padding: "18px 22px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 21, letterSpacing: "-0.01em", color: theme.primary }}>
-          trade<span style={{ color: "#4CAF82" }}>folk</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          {/* Desktop header logo — arrows + wordmark */}
+          <svg width="28" height="18" viewBox="0 0 96 56"><line x1="10" y1="14" x2="63" y2="14" stroke="#1A1A1A" strokeWidth="10" strokeLinecap="round"/><polygon points="86,14 61,2 61,26" fill="#1A1A1A"/><line x1="86" y1="42" x2="33" y2="42" stroke="#E85D3A" strokeWidth="10" strokeLinecap="round"/><polygon points="10,42 35,30 35,54" fill="#E85D3A"/></svg>
+          <span style={{ fontFamily: "Georgia,serif", fontSize: 20, fontWeight: 800, letterSpacing: "-0.5px", color: "#1A1A1A" }}>Bartr</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           {/* Search */}
@@ -1383,7 +1385,7 @@ export default function App() {
           </div>
 
           {/* Avatar */}
-          <div onClick={() => setScreen("profile")} style={{ width: 36, height: 36, borderRadius: profileDone && profile.accountType === "business" ? "10px" : "50%", background: profileDone ? "#2D3A2E" : "#E5E2DC", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", overflow: "hidden", flexShrink: 0 }}>
+          <div onClick={() => setScreen("profile")} style={{ width: 36, height: 36, borderRadius: profileDone && profile.accountType === "business" ? "10px" : "50%", background: profileDone ? "#1A1A1A" : "#E5E2DC", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", overflow: "hidden", flexShrink: 0 }}>
             {profileDone && profile.photo
               ? <img src={profile.photo} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               : profileDone
@@ -1437,7 +1439,7 @@ export default function App() {
             {/* Community stats */}
             <div style={{ display: "flex", gap: 8, marginBottom: 18, flexWrap: "wrap" }}>
               {[["247", "Members"], ["89", "Listings"], ["1.2k", "Trades"]].map(([n, l]) => (
-                <div key={l} style={{ display: "flex", alignItems: "center", gap: 6, background: "var(--tf-card,#fff)", borderRadius: 100, padding: "6px 14px", boxShadow: "0 1px 4px rgba(45,58,46,.07)" }}>
+                <div key={l} style={{ display: "flex", alignItems: "center", gap: 6, background: "var(--tf-card,#fff)", borderRadius: 100, padding: "6px 14px", boxShadow: "0 1px 4px rgba(26,26,26,.07)" }}>
                   <span className="stitle" style={{ fontSize: 14 }}>{n}</span>
                   <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#999)" }}>{l}</span>
                 </div>
@@ -1480,7 +1482,7 @@ export default function App() {
                     <div className="stitle" style={{ fontSize: 15 }}>For you ✨</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>Based on what you're looking for</div>
                   </div>
-                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
+                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
                 </div>
                 {suggestedListings.map(l => <ListingCard key={l.id} listing={l} onClick={() => openListing(l)} isFav={favorites.has(l.id)} isReported={reported.has(l.id)} onFav={cardFav} onReport={cardReport} onBlock={cardBlock} isBoosted={activeBoosted.includes(l.id)} />)}
               </>
@@ -1491,10 +1493,10 @@ export default function App() {
               <div style={{ background: "linear-gradient(135deg, #F0F7F2, #E8F5E9)", border: "1.5px solid #C8E6C9", borderRadius: 18, padding: "16px 18px", marginBottom: 18, display: "flex", gap: 13, alignItems: "center" }}>
                 <span style={{ fontSize: 28 }}>🎯</span>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#2D3A2E)", marginBottom: 3 }}>Tell us what you need</div>
+                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3 }}>Tell us what you need</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#555)", lineHeight: 1.6 }}>Add a "looking for" to your profile and we'll surface matching listings right here.</div>
                 </div>
-                <button onClick={() => setEditingProfile(true)} style={{ background: "#2D3A2E", border: "none", borderRadius: 100, padding: "8px 14px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", flexShrink: 0 }}>Update</button>
+                <button onClick={() => setEditingProfile(true)} style={{ background: "#1A1A1A", border: "none", borderRadius: 100, padding: "8px 14px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", flexShrink: 0 }}>Update</button>
               </div>
             )}
 
@@ -1516,7 +1518,7 @@ export default function App() {
                 {/* Recent / New */}
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 9 }}>
                   <div className="stitle" style={{ fontSize: 15 }}>{suggestedListings.length > 0 ? "New additions" : "Recent"}</div>
-                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
+                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
                 </div>
                 {recentListings.length > 0
                   ? recentListings.map(l => <ListingCard key={l.id} listing={l} onClick={() => openListing(l)} isFav={favorites.has(l.id)} isReported={reported.has(l.id)} onFav={cardFav} onReport={cardReport} onBlock={cardBlock} isBoosted={activeBoosted.includes(l.id)} />)
@@ -1535,7 +1537,7 @@ export default function App() {
                     <div className="stitle" style={{ fontSize: 15 }}>🔥 Trending</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>Most active right now</div>
                   </div>
-                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", cursor: "pointer" }} onClick={() => { setBrowseTab("trending"); setScreen("browse"); }}>See all →</span>
+                  <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", cursor: "pointer" }} onClick={() => { setBrowseTab("trending"); setScreen("browse"); }}>See all →</span>
                 </div>
                 <div className="tf-trending-list">
                   {trendingListings.slice(0, 6).map((l, i) => {
@@ -1548,7 +1550,7 @@ export default function App() {
                           : <div style={{ width: 44, height: 44, borderRadius: 10, background: cat.color + "20", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{cat.icon}</div>
                         }
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.3 }}>{l.title.slice(0, 32)}{l.title.length > 32 ? "…" : ""}</div>
+                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.3 }}>{l.title.slice(0, 32)}{l.title.length > 32 ? "…" : ""}</div>
                           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>{l.name}{l.rating ? ` · ⭐ ${l.rating}` : ""}</div>
                         </div>
                         {i === 0 && <span style={{ background: "#FEE2E2", color: "#EF4444", borderRadius: 100, padding: "2px 7px", fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, flexShrink: 0 }}>🔥</span>}
@@ -1591,7 +1593,7 @@ export default function App() {
                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 13px", background: "var(--tf-card,#fff)", borderRadius: 13, border: "1.5px solid var(--tf-border,#E5E2DC)" }}>
                           <span style={{ fontSize: 20 }}>🎉</span>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.4 }}>
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.4 }}>
                               <strong>You</strong> completed a trade for <strong>{item.conv.listing.title}</strong>
                             </div>
                             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>with {item.conv.listing.name} · {ago}</div>
@@ -1602,10 +1604,10 @@ export default function App() {
                         <div key={i} onClick={() => openListing(item.listing)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 13px", background: "var(--tf-card,#fff)", borderRadius: 13, border: "1.5px solid var(--tf-border,#E5E2DC)", cursor: "pointer" }}>
                           <div style={{ width: 36, height: 36, borderRadius: 10, background: "#E8F5EC", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🌿</div>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.4 }}>
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.4 }}>
                               <strong>{item.listing.name}</strong> posted a new listing
                             </div>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", marginTop: 1 }}>{item.listing.title}</div>
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", marginTop: 1 }}>{item.listing.title}</div>
                             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>{ago}</div>
                           </div>
                         </div>
@@ -1614,7 +1616,7 @@ export default function App() {
                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 13px", background: "var(--tf-card,#fff)", borderRadius: 13, border: "1.5px solid var(--tf-border,#E5E2DC)" }}>
                           <span style={{ fontSize: 22 }}>{item.badge.icon}</span>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.4 }}>
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.4 }}>
                               <strong>{item.listing.name}</strong> earned the <strong>{item.badge.label}</strong> badge
                             </div>
                             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>{item.listing.trades} trades completed · {ago}</div>
@@ -1625,8 +1627,8 @@ export default function App() {
                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 13px", background: "var(--tf-card,#fff)", borderRadius: 13, border: "1.5px solid var(--tf-border,#E5E2DC)" }}>
                           <span style={{ fontSize: 20 }}>👋</span>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#2D3A2E)" }}>
-                              <strong>{item.name}</strong> joined tradefolk
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "var(--tf-text,#1A1A1A)" }}>
+                              <strong>{item.name}</strong> joined Bartr
                             </div>
                             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>{ago}</div>
                           </div>
@@ -1642,7 +1644,7 @@ export default function App() {
             {/* Recent / New */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 9 }}>
               <div className="stitle" style={{ fontSize: 15 }}>{suggestedListings.length > 0 ? "New additions" : "Recent"}</div>
-              <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
+              <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", cursor: "pointer" }} onClick={() => setScreen("browse")}>See all →</span>
             </div>
             {recentListings.length > 0
               ? recentListings.map(l => <ListingCard key={l.id} listing={l} onClick={() => openListing(l)} isFav={favorites.has(l.id)} isReported={reported.has(l.id)} onFav={cardFav} onReport={cardReport} onBlock={cardBlock} isBoosted={activeBoosted.includes(l.id)} />)
@@ -1685,7 +1687,7 @@ export default function App() {
                 <button key={id} onClick={() => setBrowseTab(id)}
                   style={{ flex: 1, padding: "7px 4px", border: "none", borderRadius: 10, fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, cursor: "pointer", transition: "all .15s",
                     background: browseTab === id ? "var(--tf-card,#fff)" : "transparent",
-                    color: browseTab === id ? "var(--tf-text,#2D3A2E)" : "var(--tf-muted,#999)",
+                    color: browseTab === id ? "var(--tf-text,#1A1A1A)" : "var(--tf-muted,#999)",
                     boxShadow: browseTab === id ? "0 1px 4px rgba(0,0,0,.08)" : "none" }}>
                   {label}
                 </button>
@@ -1703,7 +1705,7 @@ export default function App() {
             {/* Availability toggle + Save Search */}
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
               <button onClick={() => setFilterAvail(v => !v)}
-                style={{ display: "flex", alignItems: "center", gap: 6, background: filterAvail ? "#E8F5E9" : "var(--tf-input,#F0EDE6)", border: `1.5px solid ${filterAvail ? "#4CAF82" : "var(--tf-border,#DDD8CE)"}`, borderRadius: 100, padding: "5px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 600, color: filterAvail ? "#2D6A4F" : "var(--tf-muted,#999)", cursor: "pointer" }}>
+                style={{ display: "flex", alignItems: "center", gap: 6, background: filterAvail ? "#E8F5E9" : "var(--tf-input,#F0EDE6)", border: `1.5px solid ${filterAvail ? "#E85D3A" : "var(--tf-border,#DDD8CE)"}`, borderRadius: 100, padding: "5px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 600, color: filterAvail ? "#2D6A4F" : "var(--tf-muted,#999)", cursor: "pointer" }}>
                 <span>🟢</span> Open to trades only
                 {filterAvail ? " ✓" : ""}
               </button>
@@ -1726,7 +1728,7 @@ export default function App() {
                     setSavedSearches(prev => [ns, ...prev]);
                     showToast("Search saved 🔖");
                   }}
-                    style={{ display: "flex", alignItems: "center", gap: 5, background: alreadySaved ? "var(--tf-input,#F0EDE6)" : "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#DDD8CE)", borderRadius: 100, padding: "5px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 600, color: alreadySaved ? "var(--tf-muted,#aaa)" : "var(--tf-text,#2D3A2E)", cursor: alreadySaved ? "default" : "pointer", flexShrink: 0 }}>
+                    style={{ display: "flex", alignItems: "center", gap: 5, background: alreadySaved ? "var(--tf-input,#F0EDE6)" : "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#DDD8CE)", borderRadius: 100, padding: "5px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 600, color: alreadySaved ? "var(--tf-muted,#aaa)" : "var(--tf-text,#1A1A1A)", cursor: alreadySaved ? "default" : "pointer", flexShrink: 0 }}>
                     🔖 {alreadySaved ? "Saved" : "Save search"}{!isPro && <span style={{ fontSize: 9, marginLeft: 2, color: "#F59E0B" }}>⭐</span>}
                   </button>
                 );
@@ -1761,7 +1763,7 @@ export default function App() {
                         }}>
                         <span style={{ fontSize: 16 }}>🔍</span>
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 500, color: "var(--tf-text,#2D3A2E)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{label}</div>
+                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 500, color: "var(--tf-text,#1A1A1A)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{label}</div>
                           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#bbb)", marginTop: 1 }}>
                             {ss.avail ? "Open only · " : ""}Saved {new Date(ss.savedAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                           </div>
@@ -1797,7 +1799,7 @@ export default function App() {
                     <div style={{ fontSize: 40, marginBottom: 12 }}>👤</div>
                     <div className="stitle" style={{ fontSize: 17, marginBottom: 8 }}>No one followed yet</div>
                     <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-muted,#999)", lineHeight: 1.6, marginBottom: 20 }}>Follow traders from their listing page to see their updates here.</p>
-                    <button onClick={() => setBrowseTab("all")} style={{ background: "#2D3A2E", border: "none", borderRadius: 100, padding: "11px 24px", fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#fff", cursor: "pointer" }}>Browse listings →</button>
+                    <button onClick={() => setBrowseTab("all")} style={{ background: "#1A1A1A", border: "none", borderRadius: 100, padding: "11px 24px", fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#fff", cursor: "pointer" }}>Browse listings →</button>
                   </div>
                 ) : (() => {
                   const followedListings = visibleListings.filter(l => following.has(l.name) && !l.mine);
@@ -1837,7 +1839,7 @@ export default function App() {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                   {searchQuery.trim()
                     ? <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-sub,#555)" }}>
-                        Results for <strong style={{ color: "var(--tf-text,#2D3A2E)" }}>"{searchQuery.trim()}"</strong>
+                        Results for <strong style={{ color: "var(--tf-text,#1A1A1A)" }}>"{searchQuery.trim()}"</strong>
                       </div>
                     : <div className="stitle">Listings</div>
                   }
@@ -1856,7 +1858,7 @@ export default function App() {
                         }
                       </div>
                       {searchQuery.trim() && (
-                        <button onClick={() => setSearchQuery("")} style={{ marginTop: 16, padding: "8px 20px", borderRadius: 100, border: "1.5px solid #4CAF82", background: "transparent", fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#4CAF82", cursor: "pointer" }}>
+                        <button onClick={() => setSearchQuery("")} style={{ marginTop: 16, padding: "8px 20px", borderRadius: 100, border: "1.5px solid #E85D3A", background: "transparent", fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#E85D3A", cursor: "pointer" }}>
                           Clear search
                         </button>
                       )}
@@ -1914,7 +1916,7 @@ export default function App() {
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#DC2626" }}>Listing limit reached</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#EF4444", marginTop: 2 }}>Free plan is limited to {plan.listingLimit} listings. Upgrade to Pro for up to 10.</div>
                   </div>
-                  <button onClick={() => setShowPricing("upgrade")} style={{ background: "#2D3A2E", border: "none", borderRadius: 100, padding: "7px 14px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", flexShrink: 0 }}>Upgrade</button>
+                  <button onClick={() => setShowPricing("upgrade")} style={{ background: "#1A1A1A", border: "none", borderRadius: 100, padding: "7px 14px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", flexShrink: 0 }}>Upgrade</button>
                 </div>
               );
               if (remaining === 1 && membership.plan === "free") return (
@@ -1975,7 +1977,7 @@ export default function App() {
                     onDrop={() => onDrop(i)}
                     style={{ position: "relative", width: 78, height: 78, borderRadius: 13, overflow: "hidden", flexShrink: 0, cursor: "grab", userSelect: "none" }}>
                     <img src={src} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", pointerEvents: "none" }} />
-                    {i === 0 && <div style={{ position: "absolute", bottom: 4, left: 4, background: "rgba(45,58,46,.8)", borderRadius: 6, padding: "2px 6px", fontFamily: "Plus Jakarta Sans", fontSize: 9, color: "#fff", fontWeight: 600 }}>COVER</div>}
+                    {i === 0 && <div style={{ position: "absolute", bottom: 4, left: 4, background: "rgba(26,26,26,.8)", borderRadius: 6, padding: "2px 6px", fontFamily: "Plus Jakarta Sans", fontSize: 9, color: "#fff", fontWeight: 600 }}>COVER</div>}
                     <button onClick={() => setNewListing(p => ({ ...p, photos: p.photos.filter((_,j) => j !== i) }))}
                       style={{ position: "absolute", top: 3, right: 3, width: 20, height: 20, borderRadius: "50%", background: "rgba(0,0,0,.55)", border: "none", color: "#fff", cursor: "pointer", fontSize: 11, display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1 }}>✕</button>
                   </div>
@@ -2010,7 +2012,7 @@ export default function App() {
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span style={{ fontSize: 18 }}>📋</span>
                   <div style={{ textAlign: "left" }}>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>Default contract terms</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>Default contract terms</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>
                       {cd.offer || cd.conditions ? "Terms set — buyers see these before starting" : "Optional — saves time on repeat trades"}
                     </div>
@@ -2052,7 +2054,7 @@ export default function App() {
                       {[["one-time", "One-time", "Single exchange"], ["recurring", "Recurring", "Ongoing arrangement"], ["project", "Project", "Multi-stage work"]].map(([val, label, sub]) => (
                         <button key={val} onClick={() => setCD({ contractType: val })}
                           style={{ flex: 1, padding: "10px 8px", borderRadius: 12, border: "1.5px solid " + ((cd.contractType || "one-time") === val ? theme.accent : "var(--tf-border,#DDD8CE)"), background: (cd.contractType || "one-time") === val ? (theme.id === "dark" ? "#1A2B1C" : "#E8F5EC") : "var(--tf-input,#FDFCFA)", cursor: "pointer", textAlign: "center" }}>
-                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: (cd.contractType || "one-time") === val ? theme.accent : "var(--tf-text,#2D3A2E)", marginBottom: 2 }}>{label}</div>
+                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: (cd.contractType || "one-time") === val ? theme.accent : "var(--tf-text,#1A1A1A)", marginBottom: 2 }}>{label}</div>
                           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9.5, color: "var(--tf-muted,#aaa)" }}>{sub}</div>
                         </button>
                       ))}
@@ -2090,7 +2092,7 @@ export default function App() {
                     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                       <span style={{ fontSize: 18 }}>📅</span>
                       <div style={{ textAlign: "left" }}>
-                        <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>Blocked dates</div>
+                        <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>Blocked dates</div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 1 }}>
                           {blocked.length > 0 ? `${blocked.length} date${blocked.length>1?"s":""} blocked` : "Mark dates you're unavailable"}
                         </div>
@@ -2106,7 +2108,7 @@ export default function App() {
                       <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)", lineHeight: 1.6, marginBottom: 14 }}>Tap any date to block it — buyers won't be able to schedule those days.</p>
                       <div className="cal-header" style={{ marginBottom: 10 }}>
                         <button className="cal-nav" onClick={prevBdMonth}>‹</button>
-                        <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{MONTH_NAMES[bdMonth]} {bdYear}</div>
+                        <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{MONTH_NAMES[bdMonth]} {bdYear}</div>
                         <button className="cal-nav" onClick={nextBdMonth}>›</button>
                       </div>
                       <div className="cal-grid">
@@ -2176,7 +2178,7 @@ export default function App() {
                       <div className="ava" style={{ width: 46, height: 46, background: catOf(conv.listing.category).color, fontSize: 15, flexShrink: 0 }}>{conv.listing.avatar}</div>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{conv.listing.name}</div>
+                          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{conv.listing.name}</div>
                           <StatusPill status={conv.status} contractType={conv.contractType} />
                         </div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)", marginTop: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{conv.listing.title}</div>
@@ -2239,10 +2241,10 @@ export default function App() {
                           <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                             <span style={{ fontSize: 26 }}>{opt.icon}</span>
                             <div>
-                              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{opt.title}</div>
+                              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{opt.title}</div>
                               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)", marginTop: 3, lineHeight: 1.4 }}>{opt.sub}</div>
                             </div>
-                            <div style={{ marginLeft: "auto", width: 20, height: 20, borderRadius: "50%", border: `2px solid ${profile.accountType === opt.type ? "#2D3A2E" : "#DDD8CE"}`, background: profile.accountType === opt.type ? "#2D3A2E" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                            <div style={{ marginLeft: "auto", width: 20, height: 20, borderRadius: "50%", border: `2px solid ${profile.accountType === opt.type ? "#1A1A1A" : "#DDD8CE"}`, background: profile.accountType === opt.type ? "#1A1A1A" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                               {profile.accountType === opt.type && <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--tf-card,#fff)" }} />}
                             </div>
                           </div>
@@ -2346,8 +2348,8 @@ export default function App() {
                     <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "var(--tf-sub,#555)", marginBottom: 14, lineHeight: 1.6 }}>
                       {profile.accountType === "business" ? "Add your business's social media and web links to build trust and show your work." : "Optionally add a social or portfolio link so people can see your work."}
                     </p>
-                    <div style={{ background: "var(--tf-bg,#F7F4EF)", borderRadius: 12, padding: "9px 13px", marginBottom: 16, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)" }}>
-                      💡 Free plan shows your first 2 links publicly. <button onClick={() => setShowPricing("upgrade")} style={{ background: "none", border: "none", color: "#4CAF82", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, cursor: "pointer", padding: 0 }}>Upgrade to Pro</button> to show all 6.
+                    <div style={{ background: "var(--tf-bg,#F0EEE9)", borderRadius: 12, padding: "9px 13px", marginBottom: 16, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)" }}>
+                      💡 Free plan shows your first 2 links publicly. <button onClick={() => setShowPricing("upgrade")} style={{ background: "none", border: "none", color: "#E85D3A", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, cursor: "pointer", padding: 0 }}>Upgrade to Pro</button> to show all 6.
                     </div>
                     {profile.accountType === "business" ? (
                       <div>
@@ -2359,10 +2361,10 @@ export default function App() {
                         ))}
                         <div className="toggle-wrap" style={{ marginTop: 14 }}>
                           <div>
-                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>Show links publicly</div>
+                            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>Show links publicly</div>
                             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#888)", marginTop: 2 }}>Off = only visible to users you've connected with</div>
                           </div>
-                          <div className="toggle-track" style={{ background: profile.socialsPublic ? "#4CAF82" : "#DDD8CE" }} onClick={() => setProfile(p => ({ ...p, socialsPublic: !p.socialsPublic }))}>
+                          <div className="toggle-track" style={{ background: profile.socialsPublic ? "#E85D3A" : "#DDD8CE" }} onClick={() => setProfile(p => ({ ...p, socialsPublic: !p.socialsPublic }))}>
                             <div className="toggle-thumb" style={{ left: profile.socialsPublic ? 22 : 2 }} />
                           </div>
                         </div>
@@ -2390,7 +2392,7 @@ export default function App() {
                 {/* Hero */}
                 <div style={{ textAlign: "center", padding: "10px 0 18px" }}>
                   <div style={{ position: "relative", width: 88, height: 88, margin: "0 auto 12px" }}>
-                    <div style={{ width: 88, height: 88, borderRadius: profile.accountType === "business" ? "22px" : "50%", background: "#2D3A2E", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <div style={{ width: 88, height: 88, borderRadius: profile.accountType === "business" ? "22px" : "50%", background: "#1A1A1A", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {profile.photo
                         ? <img src={profile.photo} alt="profile" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                         : <span style={{ color: "#fff", fontFamily: "Plus Jakarta Sans", fontWeight: 600, fontSize: 24 }}>{(profile.businessName || profile.name).slice(0, 2).toUpperCase()}</span>}
@@ -2410,10 +2412,10 @@ export default function App() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 7, marginTop: 6 }}>
                     <span className={`plan-badge ${membership.plan}`}>{membership.plan === "pro" ? "⭐ Pro" : "Free plan"}</span>
                     {membership.plan === "free" && (
-                      <button onClick={() => setShowPricing("upgrade")} style={{ background: "none", border: "1.5px solid #4CAF82", borderRadius: 100, padding: "3px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#4CAF82", cursor: "pointer" }}>Upgrade →</button>
+                      <button onClick={() => setShowPricing("upgrade")} style={{ background: "none", border: "1.5px solid #E85D3A", borderRadius: 100, padding: "3px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#E85D3A", cursor: "pointer" }}>Upgrade →</button>
                     )}
                   </div>
-                  {profile.headline && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#4CAF82", fontWeight: 500, marginTop: 3 }}>{profile.headline}</div>}
+                  {profile.headline && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#E85D3A", fontWeight: 500, marginTop: 3 }}>{profile.headline}</div>}
                   {profile.accountType === "business" && profile.businessType && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4B8EF0", marginTop: 2 }}>{profile.businessType}</div>}
                   {profile.accountType === "business" && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)", marginTop: 1 }}>Contact: {profile.name}</div>}
                   {profile.location && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#999)", marginTop: 4 }}>📍 {profile.location}</div>}
@@ -2423,7 +2425,7 @@ export default function App() {
                 {/* Stats */}
                 <div style={{ display: "flex", gap: 9, marginBottom: 16 }}>
                   {[[conversations.filter(c => c.status === "agreed").length.toString(), "Trades"], [myListings.length.toString(), "Listings"], [conversations.length.toString(), "Offers"]].map(([n, l]) => (
-                    <div key={l} style={{ flex: 1, background: "var(--tf-card,#fff)", borderRadius: 14, padding: "13px 8px", textAlign: "center", boxShadow: "0 2px 9px rgba(45,58,46,.06)" }}>
+                    <div key={l} style={{ flex: 1, background: "var(--tf-card,#fff)", borderRadius: 14, padding: "13px 8px", textAlign: "center", boxShadow: "0 2px 9px rgba(26,26,26,.06)" }}>
                       <div className="stitle" style={{ fontSize: 17 }}>{n}</div>
                       <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#999)", marginTop: 2 }}>{l}</div>
                     </div>
@@ -2496,12 +2498,12 @@ export default function App() {
                     </p>
                     {/* Referral code card */}
                     <div style={{ background: theme.input, border: "1.5px solid " + theme.border, borderRadius: 14, padding: "14px 16px", marginBottom: 12 }}>
-                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", letterSpacing: ".08em", marginBottom: 6 }}>YOUR INVITE CODE</div>
+                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", letterSpacing: ".08em", marginBottom: 6 }}>YOUR INVITE CODE</div>
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                        <div style={{ fontFamily: "monospace", fontSize: 22, fontWeight: 700, color: "var(--tf-text,#2D3A2E)", letterSpacing: ".12em", flex: 1 }}>{referralCode}</div>
+                        <div style={{ fontFamily: "monospace", fontSize: 22, fontWeight: 700, color: "var(--tf-text,#1A1A1A)", letterSpacing: ".12em", flex: 1 }}>{referralCode}</div>
                         <button onClick={() => {
-                          const msg = `Join me on tradefolk — the community marketplace for bartering skills and goods! Use my code ${referralCode} when you sign up: https://tradefolk.app`;
-                          if (navigator.share) { navigator.share({ title: "Join tradefolk", text: msg }).catch(() => {}); }
+                          const msg = `Join me on Bartr — the community marketplace for bartering skills and goods! Use my code ${referralCode} when you sign up: https://Bartr.app`;
+                          if (navigator.share) { navigator.share({ title: "Join Bartr", text: msg }).catch(() => {}); }
                           else { navigator.clipboard?.writeText(msg).then(() => showToast("Invite link copied! 🎉")); }
                         }} style={{ background: theme.primary, border: "none", borderRadius: 100, padding: "8px 16px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: theme.bg, cursor: "pointer", flexShrink: 0 }}>
                           Share 🔗
@@ -2511,11 +2513,11 @@ export default function App() {
                     {/* Stats */}
                     <div style={{ display: "flex", gap: 9 }}>
                       <div style={{ flex: 1, background: "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 12, padding: "11px 10px", textAlign: "center" }}>
-                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "var(--tf-text,#2D3A2E)" }}>{referrals.length}</div>
+                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "var(--tf-text,#1A1A1A)" }}>{referrals.length}</div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>Friends joined</div>
                       </div>
                       <div style={{ flex: 1, background: "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 12, padding: "11px 10px", textAlign: "center" }}>
-                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#4CAF82" }}>+{referrals.length}</div>
+                        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#E85D3A" }}>+{referrals.length}</div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>Bonus listing slots</div>
                       </div>
                     </div>
@@ -2526,7 +2528,7 @@ export default function App() {
                           <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 0", borderBottom: "1px solid var(--tf-border,#F0EDE6)" }}>
                             <div style={{ width: 28, height: 28, borderRadius: "50%", background: theme.input, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13 }}>🌿</div>
                             <div>
-                              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>Friend #{i + 1}</div>
+                              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>Friend #{i + 1}</div>
                               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#aaa)" }}>Joined {new Date(r.redeemedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</div>
                             </div>
                             <span style={{ marginLeft: "auto", background: theme.input, color: theme.accent, borderRadius: 100, padding: "2px 9px", fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700 }}>+1 slot</span>
@@ -2579,7 +2581,7 @@ export default function App() {
                       {profile.accountType === "business" && (
                         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                           <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#888)" }}>{profile.socialsPublic ? "Public" : "Connections only"}</span>
-                          <div className="toggle-track" style={{ background: profile.socialsPublic ? "#4CAF82" : "#DDD8CE", width: 36, height: 20 }} onClick={() => setProfile(p => ({ ...p, socialsPublic: !p.socialsPublic }))}>
+                          <div className="toggle-track" style={{ background: profile.socialsPublic ? "#E85D3A" : "#DDD8CE", width: 36, height: 20 }} onClick={() => setProfile(p => ({ ...p, socialsPublic: !p.socialsPublic }))}>
                             <div className="toggle-thumb" style={{ left: profile.socialsPublic ? 16 : 2, width: 16, height: 16 }} />
                           </div>
                         </div>
@@ -2611,7 +2613,7 @@ export default function App() {
                         <div className="p-section-title" style={{ marginBottom: 0 }}>Reviews</div>
                         <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
                           <StarDisplay rating={parseFloat(avg)} size={13} />
-                          <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{avg}</span>
+                          <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{avg}</span>
                           <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)" }}>({myReviews.length})</span>
                         </div>
                       </div>
@@ -2623,7 +2625,7 @@ export default function App() {
                 {/* Membership */}
                 <div className="p-section">
                   <div className="p-section-title">Membership</div>
-                  <div style={{ background: membership.plan === "pro" ? "linear-gradient(135deg,#2D3A2E,#3a5a3c)" : theme.input, borderRadius: 16, padding: "16px", marginBottom: 10 }}>
+                  <div style={{ background: membership.plan === "pro" ? "linear-gradient(135deg,#1A1A1A,#3a5a3c)" : theme.input, borderRadius: 16, padding: "16px", marginBottom: 10 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                       <div>
                         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: membership.plan === "pro" ? "#fff" : theme.text }}>
@@ -2643,14 +2645,14 @@ export default function App() {
                     </div>
                     {membership.plan === "free" && (
                       <div style={{ background: "var(--tf-card,#fff)", borderRadius: 10, height: 5, overflow: "hidden" }}>
-                        <div style={{ height: "100%", width: `${(myListings.length / PLANS.free.listingLimit) * 100}%`, background: myListings.length >= PLANS.free.listingLimit ? "#EF4444" : "#4CAF82", borderRadius: 10, transition: "width .3s" }} />
+                        <div style={{ height: "100%", width: `${(myListings.length / PLANS.free.listingLimit) * 100}%`, background: myListings.length >= PLANS.free.listingLimit ? "#EF4444" : "#E85D3A", borderRadius: 10, transition: "width .3s" }} />
                       </div>
                     )}
                   </div>
                   {/* Verified badge */}
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 14px", background: "var(--tf-card,#fff)", borderRadius: 14, border: "1.5px solid var(--tf-border,#E5E2DC)" }}>
                     <div>
-                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)", display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)", display: "flex", alignItems: "center", gap: 6 }}>
                         {membership.verified ? "✓ Identity Verified" : "Identity Verification"}
                         {membership.verified && <span className="plan-badge verified">✓ Verified</span>}
                       </div>
@@ -2747,7 +2749,7 @@ export default function App() {
                             <ListingCard listing={l} onClick={() => openListing(l)} />
                             {/* Days remaining pill */}
                             {l.listedAt && !isExpired && !isExpiring && daysLeft <= 30 && (
-                              <div style={{ position: "absolute", top: 10, left: 10, background: "rgba(45,58,46,.75)", borderRadius: 100, padding: "2px 8px", fontFamily: "Plus Jakarta Sans", fontSize: 9, color: "#fff", zIndex: 4 }}>
+                              <div style={{ position: "absolute", top: 10, left: 10, background: "rgba(26,26,26,.75)", borderRadius: 100, padding: "2px 8px", fontFamily: "Plus Jakarta Sans", fontSize: 9, color: "#fff", zIndex: 4 }}>
                                 {daysLeft}d left
                               </div>
                             )}
@@ -2765,7 +2767,7 @@ export default function App() {
                                 {[["👁","12","views"],["♥","5","saves"],["💬","3","offers"]].map(([icon,val,label]) => (
                                   <div key={label} style={{ display: "flex", alignItems: "center", gap: 4 }}>
                                     <span style={{ fontSize: 11 }}>{icon}</span>
-                                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{val}</span>
+                                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{val}</span>
                                     <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)" }}>{label}</span>
                                   </div>
                                 ))}
@@ -2787,7 +2789,7 @@ export default function App() {
                                 ].map(({ icon, val, label }) => (
                                   <div key={label} style={{ display: "flex", alignItems: "center", gap: 4 }}>
                                     <span style={{ fontSize: 11 }}>{icon}</span>
-                                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{val}</span>
+                                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{val}</span>
                                     <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)" }}>{label}</span>
                                   </div>
                                 ))}
@@ -2822,7 +2824,7 @@ export default function App() {
                             <ListingCard listing={l} onClick={() => {}} />
                             <div style={{ position: "absolute", inset: 0, borderRadius: 14, background: "rgba(255,255,255,.4)", pointerEvents: "none" }} />
                             <button onClick={() => unarchiveListing(l)}
-                              style={{ position: "absolute", top: 10, right: 10, background: "#4CAF82", border: "none", borderRadius: 100, padding: "4px 11px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", zIndex: 5 }}>Restore</button>
+                              style={{ position: "absolute", top: 10, right: 10, background: "#E85D3A", border: "none", borderRadius: 100, padding: "4px 11px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", zIndex: 5 }}>Restore</button>
                           </div>
                         ))}
                       </div>
@@ -2866,11 +2868,11 @@ export default function App() {
             {/* Photo */}
             <div style={{ textAlign: "center", marginBottom: 20 }}>
               <label htmlFor="edit-photo" style={{ cursor: "pointer" }}>
-                <div style={{ width: 88, height: 88, borderRadius: profile.accountType === "business" ? "22px" : "50%", background: "#2D3A2E", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", position: "relative" }}>
+                <div style={{ width: 88, height: 88, borderRadius: profile.accountType === "business" ? "22px" : "50%", background: "#1A1A1A", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", position: "relative" }}>
                   {profile.photo ? <img src={profile.photo} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <span style={{ color: "#fff", fontFamily: "Plus Jakarta Sans", fontWeight: 600, fontSize: 24 }}>{(profile.businessName || profile.name || "?").slice(0, 2).toUpperCase()}</span>}
                   <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.35)", display: "flex", alignItems: "center", justifyContent: "center" }}><span style={{ fontSize: 20 }}>📷</span></div>
                 </div>
-                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", fontWeight: 600 }}>Change photo</div>
+                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", fontWeight: 600 }}>Change photo</div>
               </label>
               <input id="edit-photo" type="file" accept="image/*" style={{ display: "none" }} onChange={e => {
                 const file = e.target.files[0]; if (!file) return;
@@ -2939,7 +2941,7 @@ export default function App() {
               <div style={{ display: "flex", gap: 8 }}>
                 {[["open","🟢 Open"],["limited","🟡 Limited"],["closed","🔴 Closed"]].map(([val, label]) => (
                   <button key={val} onClick={() => setProfile(p => ({ ...p, availability: val }))}
-                    style={{ flex: 1, padding: "9px 4px", borderRadius: 12, border: `2px solid ${profile.availability === val ? "#2D3A2E" : "#E5E2DC"}`, background: profile.availability === val ? "#2D3A2E" : "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: profile.availability === val ? "#fff" : "#888", cursor: "pointer" }}>{label}</button>
+                    style={{ flex: 1, padding: "9px 4px", borderRadius: 12, border: `2px solid ${profile.availability === val ? "#1A1A1A" : "#E5E2DC"}`, background: profile.availability === val ? "#1A1A1A" : "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: profile.availability === val ? "#fff" : "#888", cursor: "pointer" }}>{label}</button>
                 ))}
               </div>
             </div>
@@ -2977,7 +2979,7 @@ export default function App() {
       )}
 
       {/* ONBOARDING */}
-      {showOnboarding && <OnboardingOverlay onDone={() => { setShowOnboarding(false); setScreen("home"); showToast("Welcome to tradefolk! 🌿"); }} />}
+      {showOnboarding && <OnboardingOverlay onDone={() => { setShowOnboarding(false); setScreen("home"); showToast("Welcome to Bartr! 🌿"); }} />}
 
       {/* ── HISTORY ── */}
       {screen === "history" && (() => {
@@ -2995,7 +2997,7 @@ export default function App() {
             {completedList.length === 0 ? (
               <div style={{ textAlign: "center", padding: "60px 20px" }}>
                 <div style={{ fontSize: 48, marginBottom: 14 }}>🤝</div>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#2D3A2E)", marginBottom: 8 }}>No trades yet</div>
+                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>No trades yet</div>
                 <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-muted,#999)", lineHeight: 1.6, maxWidth: 260, margin: "0 auto 24px" }}>
                   Completed and ended trades will appear here as a record of your exchange history.
                 </p>
@@ -3039,7 +3041,7 @@ export default function App() {
                           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
                             <span style={{
                               fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".07em",
-                              color: isTerminated ? "#EF4444" : "#4CAF82",
+                              color: isTerminated ? "#EF4444" : "#E85D3A",
                               background: isTerminated ? (conv.status === "dark" ? "#2A0A0A" : "#FEF2F2") : "#E8F5EC",
                               borderRadius: 100, padding: "2px 9px",
                             }}>
@@ -3049,16 +3051,16 @@ export default function App() {
                           </div>
 
                           {/* Listing title */}
-                          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#2D3A2E)", marginBottom: 3, lineHeight: 1.3 }}>
+                          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "var(--tf-text,#1A1A1A)", marginBottom: 3, lineHeight: 1.3 }}>
                             {conv.listing.title}
                           </div>
 
                           {/* Trade partner */}
                           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
-                            <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--tf-primary,#2D3A2E)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#fff", fontFamily: "Plus Jakarta Sans" }}>
+                            <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--tf-primary,#1A1A1A)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#fff", fontFamily: "Plus Jakarta Sans" }}>
                               {conv.listing.name.slice(0, 2).toUpperCase()}
                             </div>
-                            <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#666)" }}>with <strong style={{ color: "var(--tf-text,#2D3A2E)" }}>{conv.listing.name}</strong></span>
+                            <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#666)" }}>with <strong style={{ color: "var(--tf-text,#1A1A1A)" }}>{conv.listing.name}</strong></span>
                             {contractType !== "one-time" && (
                               <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#999)", background: "var(--tf-input,#F5F2EE)", borderRadius: 100, padding: "1px 7px", marginLeft: 2 }}>{contractType}</span>
                             )}
@@ -3068,15 +3070,15 @@ export default function App() {
                           {conv.currentContractData && (
                             <div style={{ display: "flex", alignItems: "stretch", gap: 0, borderRadius: 10, overflow: "hidden", border: "1px solid var(--tf-border,#E5E2DC)", marginBottom: 12 }}>
                               <div style={{ flex: 1, padding: "8px 10px", background: "var(--tf-input,#FAFFF9)" }}>
-                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#4CAF82", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>You offered</div>
-                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.4 }}>
+                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#E85D3A", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>You offered</div>
+                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.4 }}>
                                   {conv.currentContractData.party1Offer || conv.listing.title}
                                 </div>
                               </div>
                               <div style={{ width: 1, background: "var(--tf-border,#E5E2DC)" }} />
                               <div style={{ flex: 1, padding: "8px 10px", background: "var(--tf-input,#FAFFF9)" }}>
-                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#4CAF82", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>You received</div>
-                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.4 }}>
+                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#E85D3A", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>You received</div>
+                                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.4 }}>
                                   {conv.currentContractData.party2Offer || conv.currentContractData.details2 || "—"}
                                 </div>
                               </div>
@@ -3135,7 +3137,7 @@ export default function App() {
           : "Unknown date";
         const contractType = conv.currentContractData?.contractType || "one-time";
         const shareReceipt = () => {
-          const text = `tradefolk receipt\n\n"${conv.listing.title}" with ${conv.listing.name}\nStatus: ${isComplete ? "Completed ✅" : "Ended 🔚"}\nDate: ${completedDate}`;
+          const text = `Bartr receipt\n\n"${conv.listing.title}" with ${conv.listing.name}\nStatus: ${isComplete ? "Completed ✅" : "Ended 🔚"}\nDate: ${completedDate}`;
           if (navigator.share) navigator.share({ title: "Trade Receipt", text }).catch(() => {});
           else navigator.clipboard?.writeText(text).then(() => showToast("Receipt copied! 📄"));
         };
@@ -3147,7 +3149,7 @@ export default function App() {
               {/* Receipt header */}
               <div style={{ textAlign: "center", marginBottom: 20 }}>
                 <div style={{ fontSize: 44, marginBottom: 8 }}>{isComplete ? "🎉" : "🔚"}</div>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, letterSpacing: "-0.01em", color: "var(--tf-text,#2D3A2E)", marginBottom: 4 }}>
+                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, letterSpacing: "-0.01em", color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>
                   Trade {isComplete ? "Complete" : "Ended"}
                 </div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#aaa)" }}>{completedDate}</div>
@@ -3156,20 +3158,20 @@ export default function App() {
               {/* Parties */}
               <div style={{ display: "flex", gap: 0, borderRadius: 12, overflow: "hidden", border: "1.5px solid var(--tf-border,#E5E2DC)", marginBottom: 14 }}>
                 <div style={{ flex: 1, padding: "12px 14px", background: "var(--tf-input,#FAFFF9)" }}>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#4CAF82", letterSpacing: ".07em", marginBottom: 5 }}>YOU</div>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{profile.name || "You"}</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#E85D3A", letterSpacing: ".07em", marginBottom: 5 }}>YOU</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{profile.name || "You"}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>{conv.currentContractData?.party1Offer || conv.listing.title}</div>
                 </div>
                 <div style={{ width: 1, background: "var(--tf-border,#E5E2DC)" }} />
                 <div style={{ flex: 1, padding: "12px 14px", background: "var(--tf-input,#FAFFF9)" }}>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#4CAF82", letterSpacing: ".07em", marginBottom: 5 }}>COUNTERPARTY</div>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{conv.listing.name}</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 9, fontWeight: 700, color: "#E85D3A", letterSpacing: ".07em", marginBottom: 5 }}>COUNTERPARTY</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{conv.listing.name}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#aaa)", marginTop: 2 }}>{conv.currentContractData?.party2Offer || conv.currentContractData?.details2?.slice(0, 50) || conv.listing.title}</div>
                 </div>
               </div>
 
               {/* Contract details */}
-              <div style={{ background: "var(--tf-input,#F7F4EF)", borderRadius: 12, padding: "12px 14px", marginBottom: 14 }}>
+              <div style={{ background: "var(--tf-input,#F0EEE9)", borderRadius: 12, padding: "12px 14px", marginBottom: 14 }}>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "var(--tf-muted,#aaa)", letterSpacing: ".07em", marginBottom: 10 }}>AGREEMENT DETAILS</div>
                 {[
                   { label: "Listing", val: conv.listing.title },
@@ -3179,7 +3181,7 @@ export default function App() {
                 ].map(({ label, val }) => (
                   <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "5px 0", borderBottom: "1px solid var(--tf-border,#EAE7E0)" }}>
                     <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#aaa)" }}>{label}</span>
-                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{val}</span>
+                    <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{val}</span>
                   </div>
                 ))}
               </div>
@@ -3203,7 +3205,7 @@ export default function App() {
               {/* Actions */}
               <div style={{ display: "flex", gap: 8 }}>
                 <button onClick={shareReceipt}
-                  style={{ flex: 1, padding: "12px", background: "var(--tf-primary,#2D3A2E)", border: "none", borderRadius: 100, fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
+                  style={{ flex: 1, padding: "12px", background: "var(--tf-primary,#1A1A1A)", border: "none", borderRadius: 100, fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
                   Share receipt 🔗
                 </button>
                 <button onClick={() => { setSelectedReceiptId(null); openConversation(conv.id); }}
@@ -3255,7 +3257,7 @@ export default function App() {
                   {/* Share button */}
                   <button onClick={e => {
                     e.stopPropagation();
-                    const text = `Check out "${selectedListing.title}" on tradefolk — ${selectedListing.desc || ""}`.trim();
+                    const text = `Check out "${selectedListing.title}" on Bartr — ${selectedListing.desc || ""}`.trim();
                     if (navigator.share) { navigator.share({ title: selectedListing.title, text, url: window.location.href }).catch(() => {}); }
                     else { navigator.clipboard?.writeText(text + "\n" + window.location.href).then(() => showToast("Link copied! 🔗")); }
                   }} style={{ position: "absolute", top: 12, right: 14, width: 34, height: 34, borderRadius: "50%", background: "rgba(0,0,0,.45)", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }} title="Share">
@@ -3267,7 +3269,7 @@ export default function App() {
                       <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "rgba(255,255,255,.8)" }}>{selectedListing.businessName || selectedListing.name}</div>
                       {!selectedListing.mine && (
                         <button onClick={e => { e.stopPropagation(); toggleFollow(selectedListing.name); }}
-                          style={{ background: following.has(selectedListing.name) ? "rgba(76,175,130,.85)" : "rgba(255,255,255,.2)", border: `1px solid ${following.has(selectedListing.name) ? "#4CAF82" : "rgba(255,255,255,.4)"}`, borderRadius: 100, padding: "2px 9px", fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#fff", cursor: "pointer" }}>
+                          style={{ background: following.has(selectedListing.name) ? "rgba(76,175,130,.85)" : "rgba(255,255,255,.2)", border: `1px solid ${following.has(selectedListing.name) ? "#E85D3A" : "rgba(255,255,255,.4)"}`, borderRadius: 100, padding: "2px 9px", fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#fff", cursor: "pointer" }}>
                           {following.has(selectedListing.name) ? "✓ Following" : "+ Follow"}
                         </button>
                       )}
@@ -3285,7 +3287,7 @@ export default function App() {
                     {selectedListing.photos.map((src, i) => (
                       <div key={i} onClick={() => setLightbox({ photos: selectedListing.photos, index: i })}
                         style={{ width: 56, height: 56, borderRadius: 10, overflow: "hidden", flexShrink: 0, cursor: "pointer", border: "2px solid transparent", transition: "border-color .15s" }}
-                        onMouseEnter={e => e.currentTarget.style.borderColor = "#4CAF82"}
+                        onMouseEnter={e => e.currentTarget.style.borderColor = "#E85D3A"}
                         onMouseLeave={e => e.currentTarget.style.borderColor = "transparent"}>
                         <img src={src} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                       </div>
@@ -3321,7 +3323,7 @@ export default function App() {
                     </div>
                   </div>
                   <button onClick={() => {
-                    const text = `Check out "${selectedListing.title}" on tradefolk — ${selectedListing.desc || ""}`.trim();
+                    const text = `Check out "${selectedListing.title}" on Bartr — ${selectedListing.desc || ""}`.trim();
                     if (navigator.share) { navigator.share({ title: selectedListing.title, text, url: window.location.href }).catch(() => {}); }
                     else { navigator.clipboard?.writeText(text + "\n" + window.location.href).then(() => showToast("Link copied! 🔗")); }
                   }} style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--tf-input,#F0EDE6)", border: "none", cursor: "pointer", fontSize: 17, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }} title="Share">🔗</button>
@@ -3361,15 +3363,15 @@ export default function App() {
       {boostTarget && (
         <div style={{ position: "fixed", inset: 0, zIndex: 500, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.45)" }} onClick={() => setBoostTarget(null)} />
-          <div style={{ position: "relative", background: "var(--tf-bg,#F7F4EF)", borderRadius: "24px 24px 0 0", padding: "24px 22px 36px", zIndex: 1 }}>
+          <div style={{ position: "relative", background: "var(--tf-bg,#F0EEE9)", borderRadius: "24px 24px 0 0", padding: "24px 22px 36px", zIndex: 1 }}>
             <div style={{ width: 36, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 20px" }} />
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "var(--tf-text,#2D3A2E)", marginBottom: 4 }}>⚡ Boost listing</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "var(--tf-text,#1A1A1A)", marginBottom: 4 }}>⚡ Boost listing</div>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-muted,#999)", marginBottom: 20, lineHeight: 1.5 }}>
               Boosted listings appear at the top of Browse results for everyone in your area.
             </div>
             <div style={{ background: "var(--tf-card,#fff)", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 14, padding: "12px 15px", marginBottom: 14 }}>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: "var(--tf-muted,#aaa)", marginBottom: 8, letterSpacing: ".05em" }}>LISTING</div>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{boostTarget.title}</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{boostTarget.title}</div>
             </div>
             {/* Credit or Pro banner */}
             {isPro ? (
@@ -3392,7 +3394,7 @@ export default function App() {
                 <button key={days} onClick={() => boostListing(boostTarget, days, !isPro)}
                   style={{ flex: 1, padding: "14px 8px", background: "var(--tf-card,#fff)", border: "2px solid #F59E0B", borderRadius: 14, cursor: "pointer", textAlign: "center" }}>
                   <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#D97706" }}>⚡</div>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 700, color: "var(--tf-text,#2D3A2E)", marginTop: 4 }}>{label}</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 700, color: "var(--tf-text,#1A1A1A)", marginTop: 4 }}>{label}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#999)", marginTop: 2 }}>{isPro ? "Free" : "1 credit"}</div>
                 </button>
               ))}
@@ -3522,7 +3524,7 @@ function SchedulePicker({ value, onChange, hint, blockedDates = [] }) {
         <>
           <div className="cal-header">
             <button className="cal-nav" onClick={prevMonth}>‹</button>
-            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>
+            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>
               {MONTH_NAMES[viewMonth]} {viewYear}
             </div>
             <button className="cal-nav" onClick={nextMonth}>›</button>
@@ -3578,10 +3580,10 @@ function SchedulePicker({ value, onChange, hint, blockedDates = [] }) {
         </div>
       )}
       {!isFlexible && selDate && selSlot && (
-        <div style={{ marginTop: 12, padding: "9px 13px", background: "#F0F7F2", borderRadius: 10, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#2D3A2E)", display: "flex", alignItems: "center", gap: 7 }}>
+        <div style={{ marginTop: 12, padding: "9px 13px", background: "#F0F7F2", borderRadius: 10, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#1A1A1A)", display: "flex", alignItems: "center", gap: 7 }}>
           <span style={{ fontSize: 15 }}>📅</span>
           <span><strong>{selDate.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</strong> · {TIME_SLOTS.find(s => s.id === selSlot)?.label}</span>
-          <span style={{ color: "#4CAF82", fontWeight: 600, marginLeft: "auto" }}>✓ Set</span>
+          <span style={{ color: "#E85D3A", fontWeight: 600, marginLeft: "auto" }}>✓ Set</span>
         </div>
       )}
     </div>
@@ -3622,7 +3624,7 @@ function IntakeFlow({ listing, myName, contractDefaults, onComplete, onCancel })
       ? `\n\nIMPORTANT — This listing has pre-set default terms from the owner:\n${contractDefaults.offer ? `- What they offer: ${contractDefaults.offer}` : ""}\n${contractDefaults.lookingFor ? `- What they typically want in return: ${contractDefaults.lookingFor}` : ""}\n${contractDefaults.conditions ? `- Standard conditions: ${contractDefaults.conditions}` : ""}\nPresent these to the buyer naturally ("${listing.name} typically offers…") and ask if this works for them or if they need adjustments. Only ask follow-up questions for details NOT already covered by these defaults.`
       : "";
 
-    const systemPrompt = `You are a helpful intake assistant for tradefolk, a barter/exchange marketplace. Your job is to gather all the specific details needed to create a legally-adequate exchange contract for: "${listing.title}" offered by ${listing.name} (${listing.desc}).
+    const systemPrompt = `You are a helpful intake assistant for Bartr, a barter/exchange marketplace. Your job is to gather all the specific details needed to create a legally-adequate exchange contract for: "${listing.title}" offered by ${listing.name} (${listing.desc}).
 
 Ask focused follow-up questions ONE AT A TIME to clarify the scope of work. Gather specifics like: exact scope, timeline/dates, general area or neighborhood (NEVER ask for a full street address or home address — city/neighborhood/borough is sufficient), materials/supplies (who provides), quantity/size, and any special requirements.
 
@@ -3666,7 +3668,7 @@ Until then, just ask the next most important clarifying question naturally and c
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514", max_tokens: 500,
-          system: `You are a helpful intake assistant for tradefolk. You're gathering details for an exchange contract for: "${listing.title}" (${listing.desc}).
+          system: `You are a helpful intake assistant for Bartr. You're gathering details for an exchange contract for: "${listing.title}" (${listing.desc}).
 
 Ask ONE focused follow-up question at a time. You need: scope, timeline, general area/neighborhood (NEVER ask for a full home address or street address — city or neighborhood is enough), supplies (who provides), scale/quantity, special requirements.
 
@@ -3752,7 +3754,7 @@ Be friendly and concise. Never suggest illegal or sexual services.`,
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
         <button onClick={onCancel} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20, color: "var(--tf-muted,#888)" }}>←</button>
         <div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 16, color: "var(--tf-text,#2D3A2E)" }}>Describe Your Request</div>
+          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 16, color: "var(--tf-text,#1A1A1A)" }}>Describe Your Request</div>
           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)" }}>for {listing.title} · {listing.name}</div>
         </div>
       </div>
@@ -3805,9 +3807,9 @@ Be friendly and concise. Never suggest illegal or sexual services.`,
           <div style={{ marginTop: 14 }}>
             {/* Scope summary (without timeline — that's handled by picker) */}
             <div style={{ background: "#F0F7F2", borderRadius: 14, padding: 14, marginBottom: 14 }}>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#4CAF82", marginBottom: 8, letterSpacing: ".05em" }}>REQUEST SUMMARY</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#E85D3A", marginBottom: 8, letterSpacing: ".05em" }}>REQUEST SUMMARY</div>
               {[["Scope", summary.scope], ["Location", summary.location], ["Supplies", summary.supplies], ["Scale", summary.quantity], summary.extra && ["Notes", summary.extra]].filter(Boolean).map(([k, v]) => (
-                <div key={k} style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#444", marginBottom: 4 }}><strong style={{ color: "var(--tf-text,#2D3A2E)" }}>{k}:</strong> {v}</div>
+                <div key={k} style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#444", marginBottom: 4 }}><strong style={{ color: "var(--tf-text,#1A1A1A)" }}>{k}:</strong> {v}</div>
               ))}
             </div>
 
@@ -3817,8 +3819,8 @@ Be friendly and concise. Never suggest illegal or sexual services.`,
               <div style={{ display: "flex", gap: 8 }}>
                 {[{ id: "one-time", label: "One-time", desc: "Single exchange, done when fulfilled" }, { id: "ongoing", label: "Ongoing", desc: "Repeating, renews annually, 30-day notice to end" }].map(opt => (
                   <button key={opt.id} onClick={() => setContractType(opt.id)}
-                    style={{ flex: 1, padding: "10px 8px", borderRadius: 12, border: `2px solid ${contractType === opt.id ? "#2D3A2E" : "#E5E2DC"}`, background: contractType === opt.id ? "#2D3A2E" : "#fff", cursor: "pointer", textAlign: "left", transition: "all .15s" }}>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: contractType === opt.id ? "#fff" : "#2D3A2E", marginBottom: 3 }}>{opt.label}</div>
+                    style={{ flex: 1, padding: "10px 8px", borderRadius: 12, border: `2px solid ${contractType === opt.id ? "#1A1A1A" : "#E5E2DC"}`, background: contractType === opt.id ? "#1A1A1A" : "#fff", cursor: "pointer", textAlign: "left", transition: "all .15s" }}>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: contractType === opt.id ? "#fff" : "#1A1A1A", marginBottom: 3 }}>{opt.label}</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: contractType === opt.id ? "rgba(255,255,255,.65)" : "#aaa", lineHeight: 1.4 }}>{opt.desc}</div>
                   </button>
                 ))}
@@ -3942,10 +3944,10 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
         <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20, color: "var(--tf-muted,#888)", padding: "0 4px" }}>←</button>
         <div className="ava" style={{ width: 38, height: 38, background: catOf(conv.listing.category).color, fontSize: 13, flexShrink: 0 }}>{conv.listing.avatar}</div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{conv.listing.name}</div>
+          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{conv.listing.name}</div>
           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#888)" }}>{conv.listing.title}</div>
         </div>
-        <button onClick={() => setShowContract(conv.currentContractData ? { data: conv.currentContractData, plain: conv.currentContract } : { plain: conv.currentContract })} style={{ background: "#F0F7F2", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", cursor: "pointer", fontWeight: 600 }}>📄 Contract</button>
+        <button onClick={() => setShowContract(conv.currentContractData ? { data: conv.currentContractData, plain: conv.currentContract } : { plain: conv.currentContract })} style={{ background: "#F0F7F2", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", cursor: "pointer", fontWeight: 600 }}>📄 Contract</button>
       </div>
 
       {/* Status bar */}
@@ -3955,7 +3957,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
           <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, opacity: 0.8 }}>{statusInfo.sub}</div>
         </div>
         {conv.status !== "agreed" && !conv.myAgreed && (
-          <button onClick={onAgree} style={{ background: "#4CAF82", color: "#fff", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>✓ Agree</button>
+          <button onClick={onAgree} style={{ background: "#E85D3A", color: "#fff", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>✓ Agree</button>
         )}
       </div>
 
@@ -3965,7 +3967,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
           <div key={msg.id}>
             {msg.from === "system" ? (
               <div style={{ textAlign: "center", margin: "8px 0" }}>
-                <div style={{ display: "inline-block", background: "#F0F7F2", color: "#4CAF82", padding: "7px 14px", borderRadius: 12, fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 500, maxWidth: "90%" }}>
+                <div style={{ display: "inline-block", background: "#F0F7F2", color: "#E85D3A", padding: "7px 14px", borderRadius: 12, fontFamily: "Plus Jakarta Sans", fontSize: 11.5, fontWeight: 500, maxWidth: "90%" }}>
                   {msg.text}
                   {msg.contract && (
                     <span onClick={() => setShowContract(msg.contractData ? { data: msg.contractData, plain: msg.contract } : { plain: msg.contract })} style={{ marginLeft: 8, textDecoration: "underline", cursor: "pointer" }}>View</span>
@@ -4041,7 +4043,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
             {!isEscalated && (
               <div style={{ display: "flex", gap: 8 }}>
                 <button onClick={onResolveDispute}
-                  style={{ flex: 1, padding: "9px 8px", background: "#4CAF82", border: "none", borderRadius: 100, fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
+                  style={{ flex: 1, padding: "9px 8px", background: "#E85D3A", border: "none", borderRadius: 100, fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
                   ✅ Resolved
                 </button>
                 <button onClick={() => { const ref = onEscalateDispute(); setShowMediationConfirm(ref); }}
@@ -4075,7 +4077,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
                 </div>
               </div>
               <button onClick={() => setShowCounter(true)}
-                style={{ background: "#2D3A2E", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", whiteSpace: "nowrap" }}>
+                style={{ background: "#1A1A1A", border: "none", borderRadius: 100, padding: "6px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer", whiteSpace: "nowrap" }}>
                 Update Terms
               </button>
             </div>
@@ -4084,7 +4086,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
           {!isCompleted ? (
             <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
               {!isOngoing && (
-                <button onClick={onComplete} style={{ flex: 1, background: "linear-gradient(135deg,#2D3A2E,#4CAF82)", color: "#fff", border: "none", borderRadius: 100, padding: "13px", fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 16px rgba(76,175,130,.35)" }}>
+                <button onClick={onComplete} style={{ flex: 1, background: "linear-gradient(135deg,#1A1A1A,#E85D3A)", color: "#fff", border: "none", borderRadius: 100, padding: "13px", fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 16px rgba(76,175,130,.35)" }}>
                   ✅ Mark Complete
                 </button>
               )}
@@ -4096,7 +4098,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
           ) : (
             <div style={{ background: "#E8F5EC", borderRadius: 14, padding: "11px 16px", marginBottom: 8, textAlign: "center" }}>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D7A50" }}>🎉 Trade complete!</div>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", marginTop: 2 }}>Thank you for trading with the community.</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", marginTop: 2 }}>Thank you for trading with the community.</div>
             </div>
           )}
           <div className="chat-input-row">
@@ -4149,7 +4151,7 @@ function ChatView({ conv, myName, onBack, onSend, onAgree, onCounter, onComplete
             <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
             <div style={{ textAlign: "center", marginBottom: 16 }}>
               <div style={{ fontSize: 36, marginBottom: 8 }}>🔴</div>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#2D3A2E)", marginBottom: 8 }}>End this agreement?</div>
+              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "var(--tf-text,#1A1A1A)", marginBottom: 8 }}>End this agreement?</div>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "var(--tf-sub,#666)", lineHeight: 1.6 }}>
                 {isOngoing
                   ? "Both parties will have 30 days to fulfil any outstanding obligations. This cannot be undone."
@@ -4294,14 +4296,14 @@ function CounterOfferSheet({ conv, myName, onSubmit, onClose }) {
           <div style={{ display: "flex", gap: 7 }}>
             {[["one-time","One-time"],["recurring","Recurring"],["project","Project"]].map(([v,l]) => (
               <button key={v} onClick={() => setContractType(v)}
-                style={{ flex: 1, padding: "8px 4px", borderRadius: 10, border: `1.5px solid ${contractType === v ? "#4CAF82" : "var(--tf-border,#DDD8CE)"}`, background: contractType === v ? "#E8F5EC" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: contractType === v ? "#2D6A4F" : "var(--tf-sub,#777)", cursor: "pointer" }}>{l}</button>
+                style={{ flex: 1, padding: "8px 4px", borderRadius: 10, border: `1.5px solid ${contractType === v ? "#E85D3A" : "var(--tf-border,#DDD8CE)"}`, background: contractType === v ? "#E8F5EC" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: contractType === v ? "#2D6A4F" : "var(--tf-sub,#777)", cursor: "pointer" }}>{l}</button>
             ))}
           </div>
         </div>
 
         {/* Your side */}
         <div style={{ background: "var(--tf-input,#F8F6F1)", borderRadius: 14, padding: "13px 14px", marginBottom: 13 }}>
-          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", letterSpacing: ".06em", marginBottom: 10 }}>YOUR OFFER — {myName}</div>
+          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", letterSpacing: ".06em", marginBottom: 10 }}>YOUR OFFER — {myName}</div>
           <div style={{ marginBottom: 0 }}>
             {prevD1 && prevD1 !== myOffer && myOffer.trim() && (
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "var(--tf-muted,#bbb)", textDecoration: "line-through", marginBottom: 3 }}>{prevD1}</div>
@@ -4325,14 +4327,14 @@ function CounterOfferSheet({ conv, myName, onSubmit, onClose }) {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
             <label style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "var(--tf-muted,#999)", letterSpacing: ".05em" }}>📅 WHEN</label>
             <button onClick={() => setShowSchedule(s => !s)}
-              style={{ background: "none", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 100, padding: "4px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", fontWeight: 600, cursor: "pointer" }}>
+              style={{ background: "none", border: "1.5px solid var(--tf-border,#E5E2DC)", borderRadius: 100, padding: "4px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", fontWeight: 600, cursor: "pointer" }}>
               {showSchedule ? "Hide" : scheduledDate ? "Change" : "Set date"}
             </button>
           </div>
           {!showSchedule && (
             <div>
               {scheduledDate
-                ? <div style={{ padding: "9px 13px", background: "#F0F7F2", borderRadius: 10, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#2D3A2E", display: "flex", gap: 7 }}><span>📅</span><span>{scheduledDate.display}</span></div>
+                ? <div style={{ padding: "9px 13px", background: "#F0F7F2", borderRadius: 10, fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#1A1A1A", display: "flex", gap: 7 }}><span>📅</span><span>{scheduledDate.display}</span></div>
                 : <input className="inp" style={{ fontSize: 13 }} value={timeline} onChange={e => setTimeline(e.target.value)} placeholder="Timeline (or use the date picker above)" />
               }
             </div>
@@ -4400,15 +4402,15 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 1 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 4 }}>What went wrong?</div>
-            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>Select the category that best describes the issue with <strong style={{ color: "#2D3A2E" }}>{conv.listing.name}</strong>.</p>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What went wrong?</div>
+            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>Select the category that best describes the issue with <strong style={{ color: "#1A1A1A" }}>{conv.listing.name}</strong>.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {DISPUTE_CATEGORIES.map(cat => (
                 <button key={cat.id} onClick={() => setCategory(cat.id)}
                   style={{ display: "flex", alignItems: "center", gap: 12, padding: "11px 14px", borderRadius: 13, border: `2px solid ${category === cat.id ? "#D97706" : "#E5E2DC"}`, background: category === cat.id ? "#FEF9EE" : "#fff", cursor: "pointer", textAlign: "left", transition: "all .15s" }}>
                   <span style={{ fontSize: 20, flexShrink: 0 }}>{cat.icon}</span>
                   <div>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{cat.label}</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{cat.label}</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa", marginTop: 1 }}>{cat.desc}</div>
                   </div>
                   {category === cat.id && <span style={{ marginLeft: "auto", color: "#D97706", fontWeight: 700 }}>✓</span>}
@@ -4421,12 +4423,12 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 2 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 4 }}>Describe what happened</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>Describe what happened</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>Be specific. This helps both parties and any mediator understand the situation clearly.</p>
             <textarea className="inp" style={{ minHeight: 120 }}
               placeholder="e.g. We agreed on 3 hours of garden work on Saturday. They arrived 2 hours late and only completed half the agreed tasks before leaving..."
               value={description} onChange={e => setDescription(e.target.value)} />
-            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: description.length < 20 ? "#EF4444" : "#4CAF82", marginTop: 4, textAlign: "right" }}>
+            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: description.length < 20 ? "#EF4444" : "#E85D3A", marginTop: 4, textAlign: "right" }}>
               {description.length < 20 ? `${20 - description.length} more characters needed` : "✓ Good to go"}
             </div>
             <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
@@ -4438,7 +4440,7 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
 
         {step === 3 && (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 4 }}>What outcome do you want?</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 17, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 4 }}>What outcome do you want?</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>This helps guide the resolution. You can always change course through the chat.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {DISPUTE_OUTCOMES.map(opt => (
@@ -4446,7 +4448,7 @@ function DisputeSheet({ conv, onSubmit, onClose }) {
                   style={{ display: "flex", alignItems: "center", gap: 12, padding: "11px 14px", borderRadius: 13, border: `2px solid ${outcome === opt.id ? "#D97706" : "#E5E2DC"}`, background: outcome === opt.id ? "#FEF9EE" : "#fff", cursor: "pointer", textAlign: "left", transition: "all .15s" }}>
                   <span style={{ fontSize: 20, flexShrink: 0 }}>{opt.icon}</span>
                   <div>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{opt.label}</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{opt.label}</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa", marginTop: 1 }}>{opt.desc}</div>
                   </div>
                   {outcome === opt.id && <span style={{ marginLeft: "auto", color: "#D97706", fontWeight: 700 }}>✓</span>}
@@ -4471,10 +4473,10 @@ function MediationConfirmSheet({ caseRef, conv, onClose }) {
         <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
         <div style={{ textAlign: "center", marginBottom: 20 }}>
           <div style={{ fontSize: 44, marginBottom: 10 }}>⚖️</div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 19, color: "#2D3A2E", marginBottom: 8 }}>Mediation requested</div>
+          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 19, color: "#1A1A1A", marginBottom: 8 }}>Mediation requested</div>
           <div style={{ display: "inline-block", background: "#FEF3C7", borderRadius: 100, padding: "5px 16px", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: "#D97706", marginBottom: 12 }}>Case {caseRef}</div>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#666", lineHeight: 1.6 }}>
-            A community mediator will review your case within <strong style={{ color: "#2D3A2E" }}>3–5 business days</strong>. Both parties will be contacted with next steps.
+            A community mediator will review your case within <strong style={{ color: "#1A1A1A" }}>3–5 business days</strong>. Both parties will be contacted with next steps.
           </p>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
@@ -4483,10 +4485,10 @@ function MediationConfirmSheet({ caseRef, conv, onClose }) {
             ["🔍", "Neutral review",  "A mediator will review evidence from both parties"],
             ["📬", "Decision sent",   "Both parties notified of the recommended outcome"],
           ].map(([icon, title, desc]) => (
-            <div key={title} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 14px", background: "#F7F4EF", borderRadius: 13 }}>
+            <div key={title} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 14px", background: "#F0EEE9", borderRadius: 13 }}>
               <span style={{ fontSize: 18 }}>{icon}</span>
               <div>
-                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{title}</div>
+                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{title}</div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa", marginTop: 2 }}>{desc}</div>
               </div>
             </div>
@@ -4507,7 +4509,7 @@ function StatusPill({ status, contractType }) {
   const map = {
     pending:    ["#FFF3E0", "#E8854A", "Pending"],
     countered:  ["#EEF2FF", "#4B8EF0", "Countered"],
-    agreed:     ["#E8F5EC", "#4CAF82", contractType === "ongoing" ? "Ongoing ✅" : "Agreed ✅"],
+    agreed:     ["#E8F5EC", "#E85D3A", contractType === "ongoing" ? "Ongoing ✅" : "Agreed ✅"],
     terminated: ["#F3F3F3", "#999",    "Ended"],
     disputed:   ["#FEF3C7", "#D97706", "⚠️ Disputed"],
   };
@@ -4522,7 +4524,7 @@ function AiBox({ aiQuery, setAiQuery, loading, result, suggested, run, onSelect,
       {!compact && <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "rgba(255,255,255,.6)", marginTop: 3 }}>Describe what you're looking for and I'll find matches.</p>}
       <div style={{ display: "flex", gap: 8, marginTop: 11 }}>
         <input className="ai-inp" placeholder="e.g. someone to paint my living room..." value={aiQuery} onChange={e => setAiQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && run()} />
-        <button onClick={run} style={{ padding: "10px 16px", borderRadius: 100, border: "none", background: "#4CAF82", color: "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>{loading ? "…" : "Search"}</button>
+        <button onClick={run} style={{ padding: "10px 16px", borderRadius: 100, border: "none", background: "#E85D3A", color: "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>{loading ? "…" : "Search"}</button>
       </div>
       {(loading || result) && (
         <div className="ai-res">
@@ -4557,7 +4559,7 @@ function ContractPreviewSheet({ data, myName }) {
     <div className="ctrct-wrap">
       {/* Header */}
       <div className="ctrct-header">
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#4CAF82" }}>tradefolk Exchange Agreement</div>
+        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#E85D3A" }}>Bartr Exchange Agreement</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "rgba(255,255,255,.55)", marginTop: 3 }}>v{version} · {date}</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "rgba(255,255,255,.7)", marginTop: 5 }}>
           {party1} ⇄ {party2}
@@ -4627,19 +4629,19 @@ function ListingDetailBody({ selectedListing, reviews, setSelectedListing, showT
           </div>
           {cd.offer && (
             <div style={{ marginBottom: 8 }}>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>What's included</div>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.6 }}>{cd.offer}</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>What's included</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.6 }}>{cd.offer}</div>
             </div>
           )}
           {cd.lookingFor && (
             <div style={{ marginBottom: 8 }}>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>Looking for in return</div>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.6 }}>{cd.lookingFor}</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>Looking for in return</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.6 }}>{cd.lookingFor}</div>
             </div>
           )}
           {cd.conditions && (
             <div>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>Standard conditions</div>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>Standard conditions</div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#555)", lineHeight: 1.6 }}>{cd.conditions}</div>
             </div>
           )}
@@ -4651,12 +4653,12 @@ function ListingDetailBody({ selectedListing, reviews, setSelectedListing, showT
         if (listingReviews.length === 0) return null;
         const avg = (listingReviews.reduce((a,b) => a + b.rating, 0) / listingReviews.length).toFixed(1);
         return (
-          <div style={{ background: "#F7F4EF", borderRadius: 14, padding: 14, marginBottom: 14 }}>
+          <div style={{ background: "#F0EEE9", borderRadius: 14, padding: 14, marginBottom: 14 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 700, color: "#999", letterSpacing: ".06em" }}>COMMUNITY REVIEWS</div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <StarDisplay rating={parseFloat(avg)} size={13} />
-                <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#2D3A2E" }}>{avg}</span>
+                <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#1A1A1A" }}>{avg}</span>
                 <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa" }}>({listingReviews.length})</span>
               </div>
             </div>
@@ -4673,7 +4675,7 @@ function ListingDetailBody({ selectedListing, reviews, setSelectedListing, showT
             <span className="biz-badge">🏢 Business</span>
             {selectedListing.businessType && <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#777" }}>{selectedListing.businessType}</span>}
           </div>
-          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{selectedListing.businessName}</div>
+          <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{selectedListing.businessName}</div>
           {selectedListing.socials && Object.entries(selectedListing.socials).filter(([,v])=>v).length > 0 && (() => {
             const all = Object.entries(selectedListing.socials).filter(([,v])=>v);
             const visible = selectedListing.socialsPublic ? all : all.slice(0, 2);
@@ -4742,7 +4744,7 @@ function ListingDetailBody({ selectedListing, reviews, setSelectedListing, showT
                     : <div style={{ height: 80, background: cat.color + "20", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28 }}>{cat.icon}</div>
                   }
                   <div style={{ padding: "8px 10px 10px" }}>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#2D3A2E)", lineHeight: 1.3, marginBottom: 3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{l.title}</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "var(--tf-text,#1A1A1A)", lineHeight: 1.3, marginBottom: 3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{l.title}</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)" }}>{l.name}</div>
                     {l.rating && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#888", marginTop: 3 }}>⭐ {l.rating}</div>}
                   </div>
@@ -4790,7 +4792,7 @@ function Lightbox({ photos, index: initialIndex, onClose }) {
         <div style={{ display: "flex", gap: 6, marginTop: 18 }}>
           {photos.map((_, i) => (
             <div key={i} onClick={e => { e.stopPropagation(); setIdx(i); }}
-              style={{ width: i === idx ? 20 : 7, height: 7, borderRadius: 100, background: i === idx ? "#4CAF82" : "rgba(255,255,255,.3)", cursor: "pointer", transition: "all .2s" }} />
+              style={{ width: i === idx ? 20 : 7, height: 7, borderRadius: 100, background: i === idx ? "#E85D3A" : "rgba(255,255,255,.3)", cursor: "pointer", transition: "all .2s" }} />
           ))}
         </div>
       )}
@@ -4811,7 +4813,7 @@ const NOTIF_META = {
   dispute:    { icon: "⚠️", bg: "#FEF9C3", label: "Dispute" },
   resolved:   { icon: "✅", bg: "#E8F5EC", label: "Resolved" },
   escalated:  { icon: "⚖️", bg: "#F3E8FF", label: "Mediation" },
-  system:     { icon: "📢", bg: "#F7F4EF", label: "System" },
+  system:     { icon: "📢", bg: "#F0EEE9", label: "System" },
 };
 
 function timeAgo(ts) {
@@ -4844,14 +4846,14 @@ function NotificationsPanel({ notifications, onMarkAllRead, onMarkRead, onClear,
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px 11px", borderBottom: "1.5px solid #F0EDE6", flexShrink: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "#2D3A2E" }}>Notifications</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 15, color: "#1A1A1A" }}>Notifications</div>
             {unread > 0 && (
               <span style={{ background: "#E85C7A", color: "#fff", borderRadius: 100, padding: "1px 7px", fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700 }}>{unread} new</span>
             )}
           </div>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             {unread > 0 && (
-              <button onClick={onMarkAllRead} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", cursor: "pointer", fontWeight: 600 }}>Mark all read</button>
+              <button onClick={onMarkAllRead} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", cursor: "pointer", fontWeight: 600 }}>Mark all read</button>
             )}
             {notifications.length > 0 && (
               <button onClick={onClear} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#bbb", cursor: "pointer" }}>Clear all</button>
@@ -4872,7 +4874,7 @@ function NotificationsPanel({ notifications, onMarkAllRead, onMarkRead, onClear,
                     <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12.5, color: "#444" }}>{label}</span>
                   </div>
                   <button onClick={() => onTogglePref?.(key)}
-                    style={{ width: 38, height: 22, borderRadius: 100, border: "none", cursor: "pointer", transition: "background .2s", background: notifPrefs[key] !== false ? "#4CAF82" : "#DDD8CE", position: "relative", flexShrink: 0 }}>
+                    style={{ width: 38, height: 22, borderRadius: 100, border: "none", cursor: "pointer", transition: "background .2s", background: notifPrefs[key] !== false ? "#E85D3A" : "#DDD8CE", position: "relative", flexShrink: 0 }}>
                     <div style={{ position: "absolute", top: 3, left: notifPrefs[key] !== false ? 18 : 3, width: 16, height: 16, borderRadius: "50%", background: "#fff", transition: "left .2s", boxShadow: "0 1px 3px rgba(0,0,0,.2)" }} />
                   </button>
                 </div>
@@ -4899,11 +4901,11 @@ function NotificationsPanel({ notifications, onMarkAllRead, onMarkRead, onClear,
                 <div className="notif-icon" style={{ background: meta.bg }}>{meta.icon}</div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 6 }}>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: n.read ? 400 : 600, color: "#2D3A2E", lineHeight: 1.3 }}>{n.title}</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: n.read ? 400 : 600, color: "#1A1A1A", lineHeight: 1.3 }}>{n.title}</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#bbb", whiteSpace: "nowrap", flexShrink: 0, marginTop: 1 }}>{timeAgo(n.ts)}</div>
                   </div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#777", marginTop: 2, lineHeight: 1.45, overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{n.body}</div>
-                  {tappable && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", marginTop: 4, fontWeight: 600 }}>Open conversation →</div>}
+                  {tappable && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", marginTop: 4, fontWeight: 600 }}>Open conversation →</div>}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, flexShrink: 0 }}>
                   {!n.read && <div className="notif-dot" />}
@@ -4947,16 +4949,16 @@ function ReportModal({ listing, alreadyReported, onReport, onClose }) {
 
         {!submitted ? (
           <>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#2D3A2E", marginBottom: 3 }}>Report listing</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#1A1A1A", marginBottom: 3 }}>Report listing</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 18, lineHeight: 1.6 }}>
-              What's wrong with <strong style={{ color: "#2D3A2E" }}>{listing.title}</strong> by {listing.businessName || listing.name}?
+              What's wrong with <strong style={{ color: "#1A1A1A" }}>{listing.title}</strong> by {listing.businessName || listing.name}?
             </p>
 
             {REPORT_REASONS.map(r => (
               <div key={r.id} className={`report-opt ${selected === r.id ? "sel" : ""}`} onClick={() => setSelected(r.id)}>
                 <span style={{ fontSize: 20, flexShrink: 0 }}>{r.icon}</span>
                 <div>
-                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: selected === r.id ? "#DC2626" : "#2D3A2E" }}>{r.label}</div>
+                  <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: selected === r.id ? "#DC2626" : "#1A1A1A" }}>{r.label}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#888", marginTop: 1 }}>{r.sub}</div>
                 </div>
                 <div style={{ marginLeft: "auto", width: 18, height: 18, borderRadius: "50%", border: `2px solid ${selected === r.id ? "#EF4444" : "#DDD8CE"}`, background: selected === r.id ? "#EF4444" : "transparent", flexShrink: 0 }} />
@@ -4969,7 +4971,7 @@ function ReportModal({ listing, alreadyReported, onReport, onClose }) {
 
             <div style={{ background: "#FEF2F2", borderRadius: 12, padding: "10px 14px", margin: "14px 0 16px" }}>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11.5, color: "#B91C1C", lineHeight: 1.65 }}>
-                🛡️ Reports are reviewed by the tradefolk trust & safety team. Repeated violations may result in removal from the platform.
+                🛡️ Reports are reviewed by the Bartr trust & safety team. Repeated violations may result in removal from the platform.
               </p>
             </div>
 
@@ -4981,9 +4983,9 @@ function ReportModal({ listing, alreadyReported, onReport, onClose }) {
         ) : (
           <div style={{ textAlign: "center", padding: "20px 0" }}>
             <div style={{ fontSize: 48, marginBottom: 14 }}>🛡️</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 21, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 8 }}>Report received</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 21, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 8 }}>Report received</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#777", lineHeight: 1.65, marginBottom: 22 }}>
-              Thank you for helping keep tradefolk safe. Our team will review this listing and take action if needed.
+              Thank you for helping keep Bartr safe. Our team will review this listing and take action if needed.
             </p>
             <button className="bp" onClick={onClose}>Done</button>
           </div>
@@ -5028,9 +5030,9 @@ function toICS(title, date, description, location) {
   const fmt = d => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
   const end = new Date(date); end.setHours(end.getHours() + 2);
   return [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//tradefolk//EN",
+    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Bartr//EN",
     "BEGIN:VEVENT",
-    `UID:${Date.now()}@tradefolk`,
+    `UID:${Date.now()}@bartr`,
     `DTSTAMP:${fmt(new Date())}`,
     `DTSTART:${fmt(date)}`,
     `DTEND:${fmt(end)}`,
@@ -5054,13 +5056,13 @@ function EmailConfirmModal({ data, onClose }) {
   const location = contractData ? (contractData.details2.match(/location[:\s]+([^\n•]+)/i)?.[1]?.trim() || "") : "";
 
   const handleAddToCalendar = (type) => {
-    const title = `tradefolk: ${listingTitle}`;
+    const title = `Bartr: ${listingTitle}`;
     const desc = `Exchange with ${theirName}.\n\n${contract}`;
     if (type === "ics") {
       const ics = toICS(title, tradeDate, desc, location);
       const blob = new Blob([ics], { type: "text/calendar" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement("a"); a.href = url; a.download = "tradefolk-exchange.ics"; a.click();
+      const a = document.createElement("a"); a.href = url; a.download = "Bartr-exchange.ics"; a.click();
       URL.revokeObjectURL(url);
     } else if (type === "google") {
       const fmt = d => d.toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
@@ -5082,9 +5084,9 @@ function EmailConfirmModal({ data, onClose }) {
         <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
         <div style={{ textAlign: "center", marginBottom: 18 }}>
           <div style={{ fontSize: 44, marginBottom: 10 }}>📧</div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#2D3A2E", marginBottom: 6 }}>Confirmation emails sent!</div>
+          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A", marginBottom: 6 }}>Confirmation emails sent!</div>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#777", lineHeight: 1.6 }}>
-            Both parties received a thank you email with the signed contract for <strong style={{ color: "#2D3A2E" }}>{listingTitle}</strong>.
+            Both parties received a thank you email with the signed contract for <strong style={{ color: "#1A1A1A" }}>{listingTitle}</strong>.
           </p>
         </div>
 
@@ -5094,10 +5096,10 @@ function EmailConfirmModal({ data, onClose }) {
             <div key={r.email} className="email-modal-row">
               <div className="email-modal-icon">✉️</div>
               <div>
-                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{r.name}</div>
+                <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{r.name}</div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#888", marginTop: 1 }}>{r.email}</div>
               </div>
-              <span style={{ marginLeft: "auto", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", fontWeight: 600 }}>✓ Sent</span>
+              <span style={{ marginLeft: "auto", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", fontWeight: 600 }}>✓ Sent</span>
             </div>
           ))}
         </div>
@@ -5107,7 +5109,7 @@ function EmailConfirmModal({ data, onClose }) {
           <div style={{ background: "#F0F7FF", border: "1.5px solid #BFDBFE", borderRadius: 14, padding: 14, marginBottom: 14 }}>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 700, color: "#2563EB", marginBottom: 4, letterSpacing: ".04em" }}>📅 ADD TO CALENDAR</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#555", marginBottom: 12, lineHeight: 1.6 }}>
-              A trade date was detected: <strong style={{ color: "#2D3A2E" }}>{tradeDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</strong>
+              A trade date was detected: <strong style={{ color: "#1A1A1A" }}>{tradeDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</strong>
               {location && <><br /><span style={{ color: "#888" }}>📍 {location}</span></>}
             </p>
             {!calAdded ? (
@@ -5124,7 +5126,7 @@ function EmailConfirmModal({ data, onClose }) {
                 ))}
               </div>
             ) : (
-              <div style={{ textAlign: "center", fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#4CAF82", fontWeight: 600 }}>✓ Added to your calendar!</div>
+              <div style={{ textAlign: "center", fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#E85D3A", fontWeight: 600 }}>✓ Added to your calendar!</div>
             )}
           </div>
         ) : (
@@ -5197,7 +5199,7 @@ function ReviewCard({ review, canReply, onReply }) {
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 3 }}>
-            <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#2D3A2E)" }}>{review.reviewerName}</span>
+            <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "var(--tf-text,#1A1A1A)" }}>{review.reviewerName}</span>
             <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "var(--tf-muted,#bbb)" }}>{review.date}</span>
           </div>
           <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 5 }}>
@@ -5208,11 +5210,11 @@ function ReviewCard({ review, canReply, onReply }) {
 
           {/* Owner response */}
           {(review.response || saved) && !replying && (
-            <div className="rev-reply" style={{ marginTop: 10, borderRadius: 10, padding: "9px 12px", borderLeft: "3px solid #4CAF82" }}>
-              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#4CAF82", marginBottom: 4, textTransform: "uppercase", letterSpacing: ".06em" }}>Response from {review.subjectName}</div>
+            <div className="rev-reply" style={{ marginTop: 10, borderRadius: 10, padding: "9px 12px", borderLeft: "3px solid #E85D3A" }}>
+              <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, fontWeight: 700, color: "#E85D3A", marginBottom: 4, textTransform: "uppercase", letterSpacing: ".06em" }}>Response from {review.subjectName}</div>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-sub,#555)", lineHeight: 1.55, margin: 0 }}>{replyText || review.response}</p>
               {canReply && (
-                <button onClick={() => setReplying(true)} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", cursor: "pointer", padding: "4px 0 0", fontWeight: 600 }}>Edit reply</button>
+                <button onClick={() => setReplying(true)} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", cursor: "pointer", padding: "4px 0 0", fontWeight: 600 }}>Edit reply</button>
               )}
             </div>
           )}
@@ -5226,13 +5228,13 @@ function ReviewCard({ review, canReply, onReply }) {
                 onChange={e => setReplyText(e.target.value)}
                 placeholder="Write a public response to this review…"
                 rows={3}
-                style={{ width: "100%", borderRadius: 10, border: "1.5px solid var(--tf-input-border,#DDD8CE)", padding: "9px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 12, lineHeight: 1.55, resize: "none", outline: "none", background: "var(--tf-input,#FDFCFA)", color: "var(--tf-text,#2D3A2E)" }}
+                style={{ width: "100%", borderRadius: 10, border: "1.5px solid var(--tf-input-border,#DDD8CE)", padding: "9px 12px", fontFamily: "Plus Jakarta Sans", fontSize: 12, lineHeight: 1.55, resize: "none", outline: "none", background: "var(--tf-input,#FDFCFA)", color: "var(--tf-text,#1A1A1A)" }}
               />
               <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
                 <button onClick={() => { setReplying(false); setReplyText(review.response || ""); }}
                   style={{ flex: 1, padding: "7px", borderRadius: 100, border: "1.5px solid var(--tf-border,#DDD8CE)", background: "none", fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "var(--tf-muted,#888)", cursor: "pointer" }}>Cancel</button>
                 <button onClick={handleSave} disabled={!replyText.trim()}
-                  style={{ flex: 2, padding: "7px", borderRadius: 100, border: "none", background: "#4CAF82", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", opacity: replyText.trim() ? 1 : 0.4 }}>Post response</button>
+                  style={{ flex: 2, padding: "7px", borderRadius: 100, border: "none", background: "#E85D3A", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", opacity: replyText.trim() ? 1 : 0.4 }}>Post response</button>
               </div>
             </div>
           )}
@@ -5240,7 +5242,7 @@ function ReviewCard({ review, canReply, onReply }) {
           {/* Reply CTA when no response yet */}
           {canReply && !replying && !review.response && !saved && (
             <button onClick={() => setReplying(true)}
-              style={{ marginTop: 8, background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#4CAF82", cursor: "pointer", padding: 0, fontWeight: 600 }}>+ Reply to this review</button>
+              style={{ marginTop: 8, background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#E85D3A", cursor: "pointer", padding: 0, fontWeight: 600 }}>+ Reply to this review</button>
           )}
         </div>
       </div>
@@ -5271,9 +5273,9 @@ function ReviewModal({ listing, onSubmit, onSkip }) {
         {!submitted ? (
           <>
             <div style={{ fontSize: 36, marginBottom: 6 }}>🤝</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#2D3A2E", marginBottom: 5 }}>How did it go?</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A", marginBottom: 5 }}>How did it go?</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 4, lineHeight: 1.6 }}>
-              Rate your exchange with <strong style={{ color: "#2D3A2E" }}>{listing.name}</strong>
+              Rate your exchange with <strong style={{ color: "#1A1A1A" }}>{listing.name}</strong>
             </p>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#aaa", marginBottom: 18 }}>{listing.title}</p>
 
@@ -5290,7 +5292,7 @@ function ReviewModal({ listing, onSubmit, onSkip }) {
             </div>
 
             {/* Label */}
-            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "#4CAF82", height: 22, marginBottom: 18, transition: "all .15s" }}>
+            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, fontWeight: 600, color: "#E85D3A", height: 22, marginBottom: 18, transition: "all .15s" }}>
               {active ? labels[active] : ""}
             </div>
 
@@ -5307,7 +5309,7 @@ function ReviewModal({ listing, onSubmit, onSkip }) {
         ) : (
           <div style={{ padding: "20px 0" }}>
             <div style={{ fontSize: 52, marginBottom: 14 }}>🌟</div>
-            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#2D3A2E" }}>Review submitted!</div>
+            <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Review submitted!</div>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginTop: 8 }}>Thank you for helping build trust in the community.</p>
           </div>
         )}
@@ -5323,33 +5325,33 @@ function OnboardingOverlay({ onDone }) {
   const slides = [
     {
       emoji: "🌿",
-      title: "Welcome to tradefolk",
+      title: "Welcome to Bartr",
       body: "A marketplace built on exchange. Trade your skills, time, and goods with people in your community — no cash required.",
-      bg: "#2D3A2E",
+      bg: "#1A1A1A",
       color: "#fff",
-      sub: "#a8c4aa",
+      sub: "#f0b8a0",
     },
     {
       emoji: "📋",
       title: "List what you offer",
       body: "Create a listing for any skill or item you can offer — cooking, design, repairs, produce, lessons, and more.",
-      bg: "#F7F4EF",
-      color: "#2D3A2E",
+      bg: "#F0EEE9",
+      color: "#1A1A1A",
       sub: "#888",
     },
     {
       emoji: "🤝",
       title: "Propose a trade",
       body: "Find something you want, send an offer, and negotiate terms. A smart contract is generated automatically for both parties.",
-      bg: "#F7F4EF",
-      color: "#2D3A2E",
+      bg: "#F0EEE9",
+      color: "#1A1A1A",
       sub: "#888",
     },
     {
       emoji: "✅",
       title: "Complete & review",
       body: "Once both sides are happy, mark the trade complete and leave a review. Build your reputation with every exchange.",
-      bg: "#4CAF82",
+      bg: "#E85D3A",
       color: "#fff",
       sub: "rgba(255,255,255,.7)",
     },
@@ -5452,19 +5454,19 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
   );
 
   return (
-    <div style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: "#F7F4EF", minHeight: "100vh", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column" }}>
+    <div style={{ fontFamily: "Plus Jakarta Sans, sans-serif", background: "#F0EEE9", minHeight: "100vh", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
-        .a-inp{width:100%;padding:13px 44px 13px 15px;border:1.5px solid #DDD8CE;border-radius:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#2D3A2E;outline:none;transition:border .2s}
-        .a-inp:focus{border-color:#4CAF82}
-        .a-inp-plain{width:100%;padding:13px 15px;border:1.5px solid #DDD8CE;border-radius:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#2D3A2E;outline:none;transition:border .2s}
-        .a-inp-plain:focus{border-color:#4CAF82}
-        .a-btn{background:#2D3A2E;color:#F7F4EF;border:none;border-radius:100px;padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;width:100%;transition:all .2s;margin-top:4px}
+        .a-inp{width:100%;padding:13px 44px 13px 15px;border:1.5px solid #DDD8CE;border-radius:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#1A1A1A;outline:none;transition:border .2s}
+        .a-inp:focus{border-color:#E85D3A}
+        .a-inp-plain{width:100%;padding:13px 15px;border:1.5px solid #DDD8CE;border-radius:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:#FDFCFA;color:#1A1A1A;outline:none;transition:border .2s}
+        .a-inp-plain:focus{border-color:#E85D3A}
+        .a-btn{background:#1A1A1A;color:#F0EEE9;border:none;border-radius:100px;padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;width:100%;transition:all .2s;margin-top:4px}
         .a-btn:hover{background:#3D5040;transform:translateY(-1px)} .a-btn:disabled{opacity:.45;cursor:default;transform:none}
-        .a-ghost{background:transparent;color:#2D3A2E;border:1.5px solid #DDD8CE;border-radius:100px;padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;cursor:pointer;width:100%;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px}
-        .a-ghost:hover{border-color:#2D3A2E;background:#F0F0EC}
-        .a-link{background:none;border:none;color:#4CAF82;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;text-decoration:underline;padding:0}
+        .a-ghost{background:transparent;color:#1A1A1A;border:1.5px solid #DDD8CE;border-radius:100px;padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;cursor:pointer;width:100%;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px}
+        .a-ghost:hover{border-color:#1A1A1A;background:#F0F0EC}
+        .a-link{background:none;border:none;color:#E85D3A;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;text-decoration:underline;padding:0}
         .a-err{background:#FEE2E2;color:#DC2626;border-radius:12px;padding:10px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;margin-bottom:14px;line-height:1.4}
         .a-divider{display:flex;align-items:center;gap:12px;margin:18px 0}
         .a-divider::before,.a-divider::after{content:'';flex:1;height:1px;background:#E5E2DC}
@@ -5479,11 +5481,9 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
         <div style={{ flex: 1, display: "flex", flexDirection: "column", padding: "0 28px 48px" }}>
           {/* Hero */}
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", paddingTop: 60 }}>
-            <div style={{ width: 72, height: 72, borderRadius: 20, background: "#2D3A2E", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, boxShadow: "0 8px 32px rgba(45,58,46,.25)" }}>
-              <span style={{ fontFamily: "'Instrument Serif',serif", fontSize: 28, color: "#4CAF82" }}>tf</span>
-            </div>
-            <h1 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 30, letterSpacing: "-0.01em", color: "#2D3A2E", lineHeight: 1.15, marginBottom: 14 }}>
-              Trade skills.<br />Exchange goods.<br /><span style={{ color: "#4CAF82" }}>Build community.</span>
+            <svg width="88" height="88" viewBox="0 0 96 96" style={{ marginBottom: 20 }}><circle cx="48" cy="48" r="44" fill="#1A1A1A"/><text x="22" y="68" fontFamily="Georgia,serif" fontSize="54" fontWeight="800" fill="white">B</text><line x1="58" y1="22" x2="73" y2="22" stroke="#E85D3A" strokeWidth="4" strokeLinecap="round"/><polygon points="80,22 70,17 70,27" fill="#E85D3A"/><line x1="80" y1="32" x2="65" y2="32" stroke="white" strokeWidth="4" strokeLinecap="round"/><polygon points="58,32 68,27 68,37" fill="white"/></svg>
+            <h1 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 30, letterSpacing: "-0.01em", color: "#1A1A1A", lineHeight: 1.15, marginBottom: 14 }}>
+              Trade skills.<br />Exchange goods.<br /><span style={{ color: "#E85D3A" }}>Build community.</span>
             </h1>
             <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, maxWidth: 300 }}>
               Barter your skills and goods with people in your community. No money needed — just trust and a fair exchange.
@@ -5493,7 +5493,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
             <div style={{ display: "flex", gap: 20, marginTop: 28, marginBottom: 40 }}>
               {[["247", "Members"], ["1.2k", "Trades"], ["⭐ 4.9", "Avg rating"]].map(([n, l]) => (
                 <div key={l} style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#2D3A2E" }}>{n}</div>
+                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 18, color: "#1A1A1A" }}>{n}</div>
                   <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#aaa", marginTop: 2 }}>{l}</div>
                 </div>
               ))}
@@ -5507,8 +5507,8 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
             <div style={{ textAlign: "center", marginTop: 6 }}>
               <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#bbb" }}>
                 By continuing you agree to our{" "}
-                <span style={{ color: "#4CAF82", cursor: "pointer" }}>Terms</span> &{" "}
-                <span style={{ color: "#4CAF82", cursor: "pointer" }}>Privacy Policy</span>
+                <span style={{ color: "#E85D3A", cursor: "pointer" }}>Terms</span> &{" "}
+                <span style={{ color: "#E85D3A", cursor: "pointer" }}>Privacy Policy</span>
               </span>
             </div>
           </div>
@@ -5519,8 +5519,8 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signin" && (
         <div style={{ flex: 1, padding: "48px 28px 40px" }} className="fade-up">
           <button onClick={() => reset("landing")} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888", cursor: "pointer", marginBottom: 28, padding: 0 }}>← Back</button>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 6 }}>Welcome back</h2>
-          <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 28 }}>Sign in to your tradefolk account.</p>
+          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Welcome back</h2>
+          <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 28 }}>Sign in to your Bartr account.</p>
 
           {/* Social sign-in (mock) */}
           <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 4 }}>
@@ -5561,8 +5561,8 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
           </p>
 
           <div style={{ background: "#F0F7F2", borderRadius: 12, padding: "10px 14px", marginTop: 22 }}>
-            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11.5, color: "#4CAF82", fontWeight: 600, marginBottom: 2 }}>Demo account</p>
-            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#555" }}>Email: <strong>demo@tradefolk.com</strong> · Password: <strong>demo1234</strong></p>
+            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11.5, color: "#E85D3A", fontWeight: 600, marginBottom: 2 }}>Demo account</p>
+            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#555" }}>Email: <strong>demo@bartr.app</strong> · Password: <strong>demo1234</strong></p>
           </div>
         </div>
       )}
@@ -5571,8 +5571,8 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signup" && !signupDone && (
         <div style={{ flex: 1, padding: "48px 28px 40px" }} className="fade-up">
           <button onClick={() => reset("landing")} style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888", cursor: "pointer", marginBottom: 28, padding: 0 }}>← Back</button>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 6 }}>Create account</h2>
-          <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 24 }}>Join tradefolk — it's free.</p>
+          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Create account</h2>
+          <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 24 }}>Join Bartr — it's free.</p>
 
           {/* Social sign-up */}
           <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 4 }}>
@@ -5616,7 +5616,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
             <div style={{ marginBottom: 18 }}>
               <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
                 {[1,2,3,4].map(i => (
-                  <div key={i} style={{ flex: 1, height: 3, borderRadius: 100, background: password.length >= i * 3 ? (password.length >= 12 ? "#4CAF82" : password.length >= 8 ? "#F0B429" : "#EF4444") : "#E5E2DC" }} />
+                  <div key={i} style={{ flex: 1, height: 3, borderRadius: 100, background: password.length >= i * 3 ? (password.length >= 12 ? "#E85D3A" : password.length >= 8 ? "#F0B429" : "#EF4444") : "#E5E2DC" }} />
                 ))}
               </div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa" }}>
@@ -5628,7 +5628,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
           <button className="a-btn" onClick={handleSignUp} disabled={loading}>{loading ? "Creating account…" : "Create account"}</button>
 
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#bbb", textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
-            By signing up you agree to our <span style={{ color: "#4CAF82", cursor: "pointer" }}>Terms of Service</span> and <span style={{ color: "#4CAF82", cursor: "pointer" }}>Privacy Policy</span>.
+            By signing up you agree to our <span style={{ color: "#E85D3A", cursor: "pointer" }}>Terms of Service</span> and <span style={{ color: "#E85D3A", cursor: "pointer" }}>Privacy Policy</span>.
           </p>
 
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", textAlign: "center", marginTop: 20 }}>
@@ -5642,19 +5642,19 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
       {screen === "signup" && signupDone && (
         <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 28px", textAlign: "center" }} className="fade-up">
           <div style={{ fontSize: 56, marginBottom: 18 }}>📬</div>
-          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 10 }}>Check your email</h2>
+          <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 10 }}>Check your email</h2>
           <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, marginBottom: 28 }}>
-            We've sent a verification link to <strong style={{ color: "#2D3A2E" }}>{email}</strong>. Click the link to activate your account.
+            We've sent a verification link to <strong style={{ color: "#1A1A1A" }}>{email}</strong>. Click the link to activate your account.
           </p>
           <div style={{ background: "#F0F7F2", borderRadius: 14, padding: "14px 18px", marginBottom: 28, width: "100%" }}>
-            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", lineHeight: 1.6 }}>
+            <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", lineHeight: 1.6 }}>
               In this demo, email verification is simulated. Click below to continue as if you've verified.
             </p>
           </div>
           <button className="a-btn" onClick={() => {
             const user = _userStore.find(u => u.email.toLowerCase() === email.toLowerCase());
             if (user) { user.verified = true; onAuth(user); }
-          }}>Continue to tradefolk →</button>
+          }}>Continue to Bartr →</button>
           <button style={{ background: "none", border: "none", fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#aaa", cursor: "pointer", marginTop: 16 }} onClick={() => reset("signin")}>Back to sign in</button>
         </div>
       )}
@@ -5666,7 +5666,7 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
 
           {!resetSent ? (
             <>
-              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#2D3A2E", marginBottom: 6 }}>Reset password</h2>
+              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, letterSpacing: "-0.01em", color: "#1A1A1A", marginBottom: 6 }}>Reset password</h2>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginBottom: 28, lineHeight: 1.6 }}>Enter the email address linked to your account and we'll send you a reset link.</p>
               {error && <div className="a-err">⚠️ {error}</div>}
               <div className="inp-wrap">
@@ -5677,9 +5677,9 @@ function AuthGate({ screen, setScreen, onAuth, onReferral }) {
           ) : (
             <div style={{ textAlign: "center", paddingTop: 40 }} className="fade-up">
               <div style={{ fontSize: 52, marginBottom: 16 }}>✉️</div>
-              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 24, color: "#2D3A2E", marginBottom: 10 }}>Reset link sent</h2>
+              <h2 style={{ fontFamily: "'Instrument Serif',serif", fontSize: 24, color: "#1A1A1A", marginBottom: 10 }}>Reset link sent</h2>
               <p style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", lineHeight: 1.7, marginBottom: 28 }}>
-                Check <strong style={{ color: "#2D3A2E" }}>{email}</strong> for a password reset link. It expires in 15 minutes.
+                Check <strong style={{ color: "#1A1A1A" }}>{email}</strong> for a password reset link. It expires in 15 minutes.
               </p>
               <button className="a-btn" onClick={() => reset("signin")}>Back to sign in</button>
             </div>
@@ -5709,7 +5709,7 @@ function SkillTagInput({ skills, onChange, placeholder }) {
         <input className="inp" placeholder={placeholder || "Type a skill and press Add"} value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); addSkill(); } }} />
-        <button onClick={addSkill} style={{ padding: "0 16px", borderRadius: 12, border: "none", background: "#2D3A2E", color: "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 13, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>Add</button>
+        <button onClick={addSkill} style={{ padding: "0 16px", borderRadius: 12, border: "none", background: "#1A1A1A", color: "#fff", fontFamily: "Plus Jakarta Sans", fontSize: 13, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>Add</button>
       </div>
       {skills.length > 0 && (
         <div className="skill-wrap" style={{ marginTop: 10 }}>
@@ -5737,7 +5737,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
       <MockCheckout
         item={checkoutPlan === "verify"
           ? { name: "Identity Verification", price: "4.99", desc: "One-time payment — Verified badge on your profile" }
-          : { name: "tradefolk Pro", price: cycle === "yearly" ? "99.00" : "12.00", desc: cycle === "yearly" ? "Billed annually — save 31%" : "Billed monthly" }
+          : { name: "Bartr Pro", price: cycle === "yearly" ? "99.00" : "12.00", desc: cycle === "yearly" ? "Billed annually — save 31%" : "Billed monthly" }
         }
         onSuccess={() => {
           if (checkoutPlan === "verify") onVerify();
@@ -5758,7 +5758,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
           <>
             <div style={{ textAlign: "center", marginBottom: 22 }}>
               <div style={{ fontSize: 42, marginBottom: 10 }}>🪪</div>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#2D3A2E" }}>Get Verified</div>
+              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Get Verified</div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#777", marginTop: 6, lineHeight: 1.6 }}>A one-time identity check adds a verified badge to your profile — building trust with every listing.</div>
             </div>
             <div style={{ background: "#F7FDF9", border: "1.5px solid #BBF7D0", borderRadius: 16, padding: 16, marginBottom: 20 }}>
@@ -5767,7 +5767,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
               ))}
             </div>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <span style={{ fontFamily: "'Instrument Serif',serif", fontSize: 32, color: "#2D3A2E" }}>$4.99</span>
+              <span style={{ fontFamily: "'Instrument Serif',serif", fontSize: 32, color: "#1A1A1A" }}>$4.99</span>
               <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#aaa", marginLeft: 6 }}>one-time</span>
             </div>
             <button className="bgr" onClick={() => setCheckoutPlan("verify")} style={{ background: "#D97706" }}>Continue to payment →</button>
@@ -5777,7 +5777,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
           /* ── UPGRADE MODE ── */
           <>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#2D3A2E" }}>Upgrade to Pro</div>
+              <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A" }}>Upgrade to Pro</div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, color: "#888", marginTop: 5 }}>Everything you need to trade professionally.</div>
             </div>
 
@@ -5786,7 +5786,7 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
               <div className="bill-toggle">
                 <button className={`bill-btn ${cycle === "monthly" ? "on" : ""}`} onClick={() => setCycle("monthly")}>Monthly</button>
                 <button className={`bill-btn ${cycle === "yearly" ? "on" : ""}`} onClick={() => setCycle("yearly")}>
-                  Yearly <span style={{ background: "#4CAF82", color: "#fff", borderRadius: 100, padding: "1px 7px", fontSize: 10, marginLeft: 4, fontWeight: 700 }}>Save 31%</span>
+                  Yearly <span style={{ background: "#E85D3A", color: "#fff", borderRadius: 100, padding: "1px 7px", fontSize: 10, marginLeft: 4, fontWeight: 700 }}>Save 31%</span>
                 </button>
               </div>
             </div>
@@ -5794,17 +5794,17 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
             {/* Plan cards */}
             <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 22 }}>
               {/* Free card */}
-              <div className={`price-card ${membership.plan === "free" ? "highlight" : ""}`} style={{ borderColor: membership.plan === "free" ? "#4CAF82" : "#E5E2DC" }}>
+              <div className={`price-card ${membership.plan === "free" ? "highlight" : ""}`} style={{ borderColor: membership.plan === "free" ? "#E85D3A" : "#E5E2DC" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                   <div>
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: "#2D3A2E" }}>Free</div>
+                    <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: "#1A1A1A" }}>Free</div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa" }}>Forever free</div>
                   </div>
-                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#2D3A2E" }}>$0</div>
+                  <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#1A1A1A" }}>$0</div>
                 </div>
                 {PLANS.free.features.map(f => <div key={f} className="price-feat">✓ {f}</div>)}
                 {PLANS.free.missing.map(f => <div key={f} className="price-feat missing">✗ {f}</div>)}
-                {membership.plan === "free" && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", fontWeight: 600, marginTop: 10, textAlign: "center" }}>✓ Current plan</div>}
+                {membership.plan === "free" && <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", fontWeight: 600, marginTop: 10, textAlign: "center" }}>✓ Current plan</div>}
               </div>
 
               {/* Pro card */}
@@ -5812,23 +5812,23 @@ function PricingSheet({ mode, membership, onUpgrade, onVerify, onClose }) {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
-                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: "#2D3A2E" }}>Pro</div>
-                      <span style={{ background: "#4CAF82", color: "#fff", borderRadius: 100, padding: "2px 9px", fontSize: 10, fontFamily: "Plus Jakarta Sans", fontWeight: 700 }}>RECOMMENDED</span>
+                      <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700, color: "#1A1A1A" }}>Pro</div>
+                      <span style={{ background: "#E85D3A", color: "#fff", borderRadius: 100, padding: "2px 9px", fontSize: 10, fontFamily: "Plus Jakarta Sans", fontWeight: 700 }}>RECOMMENDED</span>
                     </div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#aaa", marginTop: 2 }}>
                       {cycle === "yearly" ? "Billed annually — $8.25/mo" : "Billed monthly"}
                     </div>
                   </div>
                   <div style={{ textAlign: "right" }}>
-                    <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#2D3A2E" }}>
+                    <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 26, color: "#1A1A1A" }}>
                       ${cycle === "yearly" ? "99" : "12"}
                     </div>
                     <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 10, color: "#aaa" }}>{cycle === "yearly" ? "/ year" : "/ month"}</div>
                   </div>
                 </div>
-                {PLANS.pro.features.map(f => <div key={f} className="price-feat" style={{ color: "#2D3A2E" }}>✓ {f}</div>)}
+                {PLANS.pro.features.map(f => <div key={f} className="price-feat" style={{ color: "#1A1A1A" }}>✓ {f}</div>)}
                 {membership.plan === "pro"
-                  ? <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#4CAF82", fontWeight: 600, marginTop: 12, textAlign: "center" }}>✓ Current plan</div>
+                  ? <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#E85D3A", fontWeight: 600, marginTop: 12, textAlign: "center" }}>✓ Current plan</div>
                   : <button className="bgr" style={{ marginTop: 14 }} onClick={() => setCheckoutPlan("pro")}>Get Pro — ${cycle === "yearly" ? "99/yr" : "$12/mo"} →</button>
                 }
               </div>
@@ -5864,7 +5864,7 @@ function MockCheckout({ item, onSuccess, onCancel }) {
     <div className="overlay">
       <div className="sheet" style={{ padding: "40px 28px", textAlign: "center" }}>
         <div style={{ fontSize: 52, marginBottom: 14 }}>✅</div>
-        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#2D3A2E", marginBottom: 8 }}>Payment successful</div>
+        <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 22, color: "#1A1A1A", marginBottom: 8 }}>Payment successful</div>
         <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 14, color: "#888" }}>Setting up your account…</div>
       </div>
     </div>
@@ -5875,12 +5875,12 @@ function MockCheckout({ item, onSuccess, onCancel }) {
       <div className="sheet" onClick={e => e.stopPropagation()} style={{ padding: "22px 22px 32px" }}>
         <div style={{ width: 38, height: 4, background: "#E0DDD6", borderRadius: 100, margin: "0 auto 18px" }} />
         {/* Stripe-style header */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, padding: "12px 14px", background: "#F7F4EF", borderRadius: 13 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, padding: "12px 14px", background: "#F0EEE9", borderRadius: 13 }}>
           <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#2D3A2E" }}>{item.name}</div>
+            <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>{item.name}</div>
             <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 11, color: "#888", marginTop: 2 }}>{item.desc}</div>
           </div>
-          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#2D3A2E" }}>${item.price}</div>
+          <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 20, color: "#1A1A1A" }}>${item.price}</div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 16 }}>
@@ -5988,7 +5988,7 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
       {usedCats.length > 1 && (
         <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 8, marginBottom: 8 }}>
           <button onClick={() => setMapCat("all")}
-            style={{ flexShrink: 0, padding: "5px 13px", borderRadius: 100, border: `1.5px solid ${mapCat === "all" ? "#2D3A2E" : "var(--tf-border,#DDD8CE)"}`, background: mapCat === "all" ? "#2D3A2E" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: mapCat === "all" ? "#fff" : "var(--tf-sub,#777)", cursor: "pointer" }}>
+            style={{ flexShrink: 0, padding: "5px 13px", borderRadius: 100, border: `1.5px solid ${mapCat === "all" ? "#1A1A1A" : "var(--tf-border,#DDD8CE)"}`, background: mapCat === "all" ? "#1A1A1A" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: mapCat === "all" ? "#fff" : "var(--tf-sub,#777)", cursor: "pointer" }}>
             All ({listings.length})
           </button>
           {usedCats.map(cat => (
@@ -6025,14 +6025,14 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
             const isSel = group.some(l => l.id === pinSelected);
             const isFav = group.some(l => favorites.has(l.id));
             const R = isSel ? 18 : isCluster ? 16 : 14;
-            const fill = isSel ? cat.color : isCluster ? "#2D3A2E" : "#fff";
+            const fill = isSel ? cat.color : isCluster ? "#1A1A1A" : "#fff";
             const textColor = isSel || isCluster ? "#fff" : cat.color;
             return (
               <g key={ci} style={{ cursor: "pointer" }}
                 onClick={e => { e.stopPropagation(); setPinSelected(isSel ? null : mainL.id); }}>
                 {isSel && <circle cx={pos.x} cy={pos.y} r={26} fill="none" stroke={cat.color} strokeWidth={2} opacity={0.35} />}
                 <circle cx={pos.x + 1} cy={pos.y + 2} r={R} fill="rgba(0,0,0,0.18)" />
-                <circle cx={pos.x} cy={pos.y} r={R} fill={fill} stroke={isCluster && !isSel ? "#2D3A2E" : cat.color} strokeWidth={isSel ? 0 : 2.5} />
+                <circle cx={pos.x} cy={pos.y} r={R} fill={fill} stroke={isCluster && !isSel ? "#1A1A1A" : cat.color} strokeWidth={isSel ? 0 : 2.5} />
                 <text x={pos.x} y={pos.y + 1} textAnchor="middle" dominantBaseline="middle"
                   fontSize={isSel ? 9 : isCluster ? 10 : 8} fontFamily="Plus Jakarta Sans,sans-serif" fontWeight="700"
                   fill={textColor}>
@@ -6056,7 +6056,7 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
                 <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
                   {selCluster.group.map(l => (
                     <button key={l.id} onClick={() => setPinSelected(l.id)}
-                      style={{ padding: "4px 10px", borderRadius: 100, border: `1.5px solid ${l.id === pinSelected ? "#4CAF82" : "var(--tf-border,#DDD8CE)"}`, background: l.id === pinSelected ? "#E8F5EC" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: l.id === pinSelected ? "#2D6A4F" : "var(--tf-sub,#777)", cursor: "pointer" }}>
+                      style={{ padding: "4px 10px", borderRadius: 100, border: `1.5px solid ${l.id === pinSelected ? "#E85D3A" : "var(--tf-border,#DDD8CE)"}`, background: l.id === pinSelected ? "#E8F5EC" : "var(--tf-input,#FDFCFA)", fontFamily: "Plus Jakarta Sans", fontSize: 11, fontWeight: 600, color: l.id === pinSelected ? "#2D6A4F" : "var(--tf-sub,#777)", cursor: "pointer" }}>
                       {l.title.length > 16 ? l.title.slice(0,16)+"…" : l.title}
                     </button>
                   ))}
@@ -6070,18 +6070,18 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
                 : <div className="ava" style={{ width: 52, height: 52, borderRadius: catOf(selected.category).id === "business" ? 12 : "50%", background: catOf(selected.category).color, fontSize: 15, flexShrink: 0 }}>{selected.avatar}</div>
               }
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#2D3A2E", lineHeight: 1.25 }}>{selected.title}</div>
+                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#1A1A1A", lineHeight: 1.25 }}>{selected.title}</div>
                 <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#888", marginTop: 2 }}>{selected.businessName || selected.name}</div>
                 <div style={{ display: "flex", gap: 5, marginTop: 5, flexWrap: "wrap" }}>
                   <span className="nbhd-badge">📍 {selected.neighbourhood}</span>
-                  {selected.rating && <span style={{ background: "#F7F4EF", color: "#888", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>⭐ {selected.rating}</span>}
+                  {selected.rating && <span style={{ background: "#F0EEE9", color: "#888", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>⭐ {selected.rating}</span>}
                 </div>
               </div>
               <button onClick={() => setPinSelected(null)} style={{ background: "none", border: "none", cursor: "pointer", color: "#bbb", fontSize: 18, padding: 0, lineHeight: 1, flexShrink: 0 }}>✕</button>
             </div>
             <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
               <button onClick={() => { setPinSelected(null); onSelect(selected); }}
-                style={{ flex: 1, padding: "9px 0", borderRadius: 100, border: "none", background: "#2D3A2E", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
+                style={{ flex: 1, padding: "9px 0", borderRadius: 100, border: "none", background: "#1A1A1A", fontFamily: "Plus Jakarta Sans", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer" }}>
                 View listing
               </button>
               <button onClick={() => onFav(selected)}
@@ -6103,7 +6103,7 @@ function MapView({ listings, favorites, reported, onSelect, onFav, onReport, onB
       {/* Legend */}
       <div style={{ display: "flex", gap: 14, marginTop: 8, paddingLeft: 2 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 5, fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)" }}>
-          <div style={{ width: 16, height: 16, borderRadius: "50%", background: "#2D3A2E", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 8, fontWeight: 700 }}>3</div>
+          <div style={{ width: 16, height: 16, borderRadius: "50%", background: "#1A1A1A", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 8, fontWeight: 700 }}>3</div>
           Cluster
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 5, fontFamily: "Plus Jakarta Sans", fontSize: 10.5, color: "var(--tf-muted,#aaa)" }}>
@@ -6140,11 +6140,11 @@ function ListingCard({ listing, onClick, isFav, onFav, onReport, onBlock, isRepo
               <div className="ctx-menu">
                 <button className="ctx-item" onClick={(e) => { closeMenu(e); onFav && onFav(listing); }}>
                   <span style={{ fontSize: 16 }}>{isFav ? "💔" : "♡"}</span>
-                  <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 500, color: isFav ? "#E85C7A" : "#2D3A2E" }}>{isFav ? "Remove from saved" : "Save listing"}</span>
+                  <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 500, color: isFav ? "#E85C7A" : "#1A1A1A" }}>{isFav ? "Remove from saved" : "Save listing"}</span>
                 </button>
                 <button className="ctx-item" onClick={(e) => { closeMenu(e); onReport && onReport(listing); }} style={{ opacity: isReported ? 0.5 : 1 }} disabled={isReported}>
                   <span style={{ fontSize: 16 }}>🚩</span>
-                  <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 500, color: "#2D3A2E" }}>{isReported ? "Already reported" : "Report listing"}</span>
+                  <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 500, color: "#1A1A1A" }}>{isReported ? "Already reported" : "Report listing"}</span>
                 </button>
                 <div style={{ height: 1, background: "#F0EDE6", margin: "2px 0" }} />
                 <button className="ctx-item danger" onClick={(e) => { closeMenu(e); onBlock && onBlock(listing); }}>
@@ -6178,7 +6178,7 @@ function ListingCard({ listing, onClick, isFav, onFav, onReport, onBlock, isRepo
           {!cover && (
             <>
               <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", paddingRight: showMenu ? 28 : 0 }}>
-                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#2D3A2E" }}>{listing.title}</div>
+                <div style={{ fontFamily: "'Instrument Serif',serif", fontSize: 14, color: "#1A1A1A" }}>{listing.title}</div>
                 {isBiz && <span className="biz-badge">🏢 Biz</span>}
               </div>
               <div style={{ fontFamily: "Plus Jakarta Sans", fontSize: 12, color: "#999", marginTop: 1 }}>{isBiz ? listing.businessName : listing.name}</div>
@@ -6187,10 +6187,10 @@ function ListingCard({ listing, onClick, isFav, onFav, onReport, onBlock, isRepo
           )}
           <div style={{ display: "flex", gap: 5, marginTop: cover ? 0 : 7, flexWrap: "wrap" }}>
             <span style={{ background: cat.color + "20", color: cat.color, padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>{cat.icon} {cat.label}</span>
-            {listing.rating && <span style={{ background: "#F7F4EF", color: "#888", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>⭐ {listing.rating}{listing.reviewCount ? ` (${listing.reviewCount})` : ""}</span>}
+            {listing.rating && <span style={{ background: "#F0EEE9", color: "#888", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>⭐ {listing.rating}{listing.reviewCount ? ` (${listing.reviewCount})` : ""}</span>}
             {isBiz && <span className="biz-badge">🏢 Biz</span>}
-            {availDot && listing.availability !== "open" && <span style={{ background: "#F7F4EF", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans", color: "#888" }}>{availDot} {listing.availability === "limited" ? "Limited" : "Closed"}</span>}
-            {listing.mine && <span style={{ background: "#E8F5E9", color: "#4CAF82", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>✓ Yours</span>}
+            {availDot && listing.availability !== "open" && <span style={{ background: "#F0EEE9", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans", color: "#888" }}>{availDot} {listing.availability === "limited" ? "Limited" : "Closed"}</span>}
+            {listing.mine && <span style={{ background: "#E8F5E9", color: "#E85D3A", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans" }}>✓ Yours</span>}
             {isBoosted && <span style={{ background: "#FFF7ED", color: "#D97706", padding: "2px 8px", borderRadius: 100, fontSize: 10, fontFamily: "Plus Jakarta Sans", fontWeight: 700 }}>⚡ Boosted</span>}
             {!listing.mine && <ListingBadges listing={listing} />}
           </div>

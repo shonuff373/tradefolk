@@ -1,11 +1,11 @@
-/* Tradefolk — supplemental layout (loaded via main.jsx) */
+/* Bartr — supplemental layout (loaded via main.jsx) */
 
 /* ── Custom scrollbar ─────────────────────────────────────────────────────── */
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4CAF82 transparent;
+  scrollbar-color: #E85D3A transparent;
 }
 
 /* Chrome / Edge / Safari */
@@ -19,13 +19,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4CAF82;
+  background: #E85D3A;
   border-radius: 100px;
   transition: background 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D3A2E;
+  background: #1A1A1A;
 }
 
 ::-webkit-scrollbar-corner {
